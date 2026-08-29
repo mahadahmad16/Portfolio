@@ -1,0 +1,33 @@
+/* ---------------------------------------------------------------
+   Theme tokens — dark, technical, dark-blue-neon direction.
+   Every layout/background component reads its colors, type and
+   spacing from here so the theme stays consistent and easy to
+   retune from one place.
+------------------------------------------------------------------ */
+
+:root {
+  /* Color */
+  --bg-void: #060911;               /* page background */
+  --bg-panel: #0d121e;              /* solid panel surface (no blur) */
+  --bg-panel-glass: rgba(13, 18, 30, 0.62); /* glass panels: topbar, sidebar */
+  --accent-blue: #3e6ff2;           /* primary neon-blue accent */
+  --accent-blue-soft: rgba(62, 111, 242, 0.35);
+  --accent-cyan: #5fd4ff;           /* secondary glow highlight */
+  --text-primary: #e8ecf6;
+  --text-muted: #8993a8;
+  --border-hairline: rgba(255, 255, 255, 0.08);
+
+  /* Type */
+  --font-display: "Space Grotesk", sans-serif; /* headings */
+  --font-body: "Inter", sans-serif;            /* body copy */
+  --font-mono: "JetBrains Mono", monospace;    /* nav labels, eyebrows, tags */
+
+  /* Layout */
+  --topbar-h: 72px;
+  --sidebar-w: 264px;
+  --radius-md: 14px;
+  --radius-sm: 8px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}

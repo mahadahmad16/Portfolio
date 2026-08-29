@@ -1,7 +1,7 @@
 /* Import fonts + tokens. For production, move this @import into
    <link rel="preconnect"/preload"> tags in index.html instead —
    it's faster than an @import, this is just the quick-start version. */
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap");
 @import "./variables.css";
 
 * {

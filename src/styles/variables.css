@@ -18,8 +18,8 @@
   --border-hairline: rgba(255, 255, 255, 0.08);
 
   /* Type */
-  --font-display: "Space Grotesk", sans-serif; /* headings */
-  --font-body: "Inter", sans-serif;            /* body copy */
+  --font-display: "Sora", sans-serif;           /* headings */
+  --font-body: "Manrope", sans-serif;           /* body copy */
   --font-mono: "JetBrains Mono", monospace;    /* nav labels, eyebrows, tags */
 
   /* Layout */

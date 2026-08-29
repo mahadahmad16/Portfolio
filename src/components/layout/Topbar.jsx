@@ -1,12 +1,13 @@
 import { Menu, X } from "lucide-react";
 import "./Topbar.css";
+import profileImage from "../../assets/images/My Photo.png"
 
 export default function Topbar({ isSidebarOpen, onToggleSidebar }) {
   return (
     <header className="topbar">
       <div className="topbar__brand">
         <span className="topbar__avatar" aria-hidden="true">
-          MA
+          <img src={profileImage} alt="Mahad Ahmad" />
         </span>
         <span className="topbar__name">Mahad Ahmad</span>
       </div>

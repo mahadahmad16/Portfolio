@@ -1,0 +1,33 @@
+.hero {
+  padding: clamp(2rem, 6vw, 4rem) 0 clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.hero__name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.hero__role {
+  margin: 0.75rem 0 0;
+  min-height: 1.6em; /* keeps layout stable as the typed word length changes */
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+}
+
+.hero__tagline {
+  margin: 1.25rem 0 0;
+  max-width: 52ch;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}

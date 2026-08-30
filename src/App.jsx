@@ -1,20 +1,21 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./components/layout/MainLayout";
+import SectionHeading from "./components/common/SectionHeading";
 
 /**
- * Temporary stand-in for pages that haven't been built yet.
+ * Temporary stand-in for pages that haven't been built yet — now using
+ * the real SectionHeading component instead of one-off inline styles,
+ * so it renders consistently with the rest of the design system.
  * Swap each route's `element` below for the real page component as
- * you build src/pages/*.jsx — this just lets you preview the layout
- * (Sidebar / Topbar / Footer / ParticlesBackground) in the meantime.
+ * you build src/pages/*.jsx.
  */
 function Placeholder({ title }) {
   return (
-    <section>
-      <h1 style={{ fontFamily: "var(--font-display)" }}>{title}</h1>
-      <p style={{ color: "var(--text-muted)" }}>
-        This section hasn't been built yet — content coming soon.
-      </p>
-    </section>
+    <SectionHeading
+      eyebrow="Coming soon"
+      title={title}
+      description="This section hasn't been built yet — content coming soon."
+    />
   );
 }
 

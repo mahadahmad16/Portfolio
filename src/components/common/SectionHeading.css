@@ -1,0 +1,36 @@
+.section-heading {
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.section-heading--center {
+  text-align: center;
+}
+
+.section-heading__eyebrow {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+}
+
+.section-heading__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.section-heading__description {
+  margin: 0.75rem 0 0;
+  max-width: 60ch;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.section-heading--center .section-heading__description {
+  margin-left: auto;
+  margin-right: auto;
+}

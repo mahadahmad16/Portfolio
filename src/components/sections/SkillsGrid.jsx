@@ -1,29 +1,11 @@
 import GlowCard from "../common/GlowCard";
+import { SKILL_CATEGORIES } from "../../data/skills";
 import "./SkillsGrid.css";
-
-// TODO: move to src/data/skills.js once the data/ folder is built
-const SKILL_CATEGORIES = [
-  {
-    category: "Frontend",
-    items: ["React", "HTML", "CSS", "Tailwind CSS", "Bootstrap"],
-  },
-  {
-    category: "Backend",
-    items: ["Node.js", "Express"],
-  },
-  {
-    category: "Database",
-    items: ["MongoDB"],
-  },
-  {
-    category: "Tools",
-    items: ["Git", "GitHub", "Figma", "VS Code", "Canva"],
-  },
-];
 
 /**
  * Skills grouped into cards by category, matching the brief's
- * Frontend / Backend / Database / Tools breakdown.
+ * Frontend / Backend / Database / Tools breakdown. Data lives in
+ * src/data/skills.js.
  */
 export default function SkillsGrid() {
   return (

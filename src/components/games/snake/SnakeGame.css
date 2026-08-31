@@ -1,0 +1,129 @@
+.snake-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.snake-game__header {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.snake-game__score {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.snake-game__score strong {
+  color: var(--accent-cyan);
+  font-size: 1.1rem;
+}
+
+.snake-game__score--muted strong {
+  color: var(--text-muted);
+}
+
+.snake-game__board {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-hairline);
+  background: rgba(2, 4, 8, 0.6);
+}
+
+.snake-game__board canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.snake-game__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: rgba(6, 9, 17, 0.82);
+  backdrop-filter: blur(4px);
+  text-align: center;
+  padding: 1rem;
+}
+
+.snake-game__overlay-text {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.snake-game__controls {
+  display: grid;
+  grid-template-columns: repeat(3, 44px);
+  grid-template-rows: repeat(2, 44px);
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.snake-game__dpad-btn {
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-hairline);
+  background: rgba(62, 111, 242, 0.08);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease-out), background 0.2s var(--ease-out);
+}
+
+.snake-game__dpad-btn:hover,
+.snake-game__dpad-btn:active {
+  border-color: var(--accent-blue-soft);
+  background: rgba(62, 111, 242, 0.18);
+}
+
+.snake-game__dpad-btn:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+}
+
+.snake-game__dpad-btn--up {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.snake-game__dpad-btn--left {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.snake-game__dpad-btn--right {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.snake-game__dpad-btn--down {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.snake-game__hint {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 480px) {
+  .snake-game__hint {
+    display: none;
+  }
+}

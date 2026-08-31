@@ -1,0 +1,120 @@
+.project-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.project-card__media {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-hairline);
+  background: linear-gradient(135deg, rgba(62, 111, 242, 0.18), rgba(95, 212, 255, 0.04));
+}
+
+.project-card__image,
+.project-card__placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+.project-card__image {
+  display: block;
+  object-fit: cover;
+  transition: transform 0.35s var(--ease-out);
+}
+
+.project-card:hover .project-card__image {
+  transform: scale(1.04);
+}
+
+.project-card__placeholder {
+  display: grid;
+  place-items: center;
+  color: var(--accent-cyan);
+  background:
+    linear-gradient(rgba(95, 212, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(95, 212, 255, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.project-card__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.25rem;
+}
+
+.project-card__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.project-card__description {
+  margin: 0.6rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.project-card__technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-card__technology {
+  padding: 0.28rem 0.6rem;
+  border: 1px solid var(--border-hairline);
+  border-radius: 999px;
+  background: rgba(62, 111, 242, 0.08);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-cyan);
+}
+
+.project-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: auto;
+  padding-top: 1.25rem;
+}
+
+.project-card__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s var(--ease-out);
+}
+
+.project-card__links a:hover {
+  color: var(--accent-cyan);
+}
+
+.project-card__links a:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card__image {
+    transition: none;
+  }
+
+  .project-card:hover .project-card__image {
+    transform: none;
+  }
+}

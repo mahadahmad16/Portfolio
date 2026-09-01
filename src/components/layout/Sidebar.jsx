@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import "./Sidebar.css";
 
-// TODO: move these into src/data/navLinks.js once the data/ folder is built
+// TODO: move these into src/data/navLinks.js once it exists
 const NAV_LINKS = [
   { label: "About Me", to: "/", icon: User },
   { label: "Qualifications", to: "/qualifications", icon: GraduationCap },

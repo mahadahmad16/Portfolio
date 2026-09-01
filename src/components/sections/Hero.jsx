@@ -2,6 +2,7 @@ import { FolderGit2, Mail, Download } from "lucide-react";
 import Button from "../common/Button";
 import TypingText from "../common/TypingText";
 import "./Hero.css";
+import resume from "../../assets/certificates/CV.pdf";
 
 const ROLES = ["MERN Stack Developer", "UI/UX Designer"];
 
@@ -29,7 +30,7 @@ export default function Hero() {
         <Button to="/contact" variant="secondary" icon={Mail}>
           Contact Me
         </Button>
-        <Button href="/resume.pdf" download variant="secondary" icon={Download}>
+        <Button href={resume} download variant="secondary" icon={Download}>
           Download Resume
         </Button>
       </div>

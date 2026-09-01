@@ -1,3 +1,4 @@
+import { cn } from "../../utils/helpers";
 import "./GlowCard.css";
 
 /**
@@ -12,7 +13,7 @@ export default function GlowCard({
   children,
   ...rest
 }) {
-  const classes = `glow-card ${interactive ? "glow-card--interactive" : ""} ${className}`.trim();
+  const classes = cn("glow-card", interactive && "glow-card--interactive", className);
 
   return (
     <Tag className={classes} {...rest}>

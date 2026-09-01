@@ -1,34 +1,34 @@
 import { useEffect, useRef } from "react";
+import useReducedMotion from "../../hooks/useReducedMotion";
+import { debounce } from "../../utils/helpers";
 import "./ParticlesBackground.css";
 
 // accent-cyan as an "r, g, b" triplet so it can be dropped into rgba()
 const PARTICLE_COLOR = "95, 212, 255";
 const LINK_DISTANCE = 130; // px — lines only draw between particles closer than this
 const BASE_SPEED = 0.12; // px per frame — kept slow and lightweight on purpose
+const RESIZE_DEBOUNCE_MS = 150;
 
 function getParticleCount(width, height) {
-  // Roughly one particle per 22,000px^2 of viewport, capped both ways
-  // so it stays subtle on huge monitors and cheap on small phones.
   const area = width * height;
   return Math.min(90, Math.max(28, Math.round(area / 22000)));
 }
 
 /**
  * Fixed, full-viewport ambient background: slow drifting particles with
- * faint connecting lines when they pass near each other (a soft
- * "circuit / constellation" motif). Purely decorative — aria-hidden,
- * no pointer events, and it freezes on a single static frame for
- * prefers-reduced-motion instead of animating.
+ * faint connecting lines when they pass near each other. Freezes to a
+ * single static frame under prefers-reduced-motion, and — since
+ * useReducedMotion is reactive — starts/stops live if the user toggles
+ * that OS setting while the page is open. Resize handling is debounced
+ * so dragging the window doesn't rebuild the particle set every pixel.
  */
 export default function ParticlesBackground() {
   const canvasRef = useRef(null);
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
 
     let width = 0;
     let height = 0;
@@ -60,6 +60,8 @@ export default function ParticlesBackground() {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       particles = createParticles();
     }
+
+    const debouncedResize = debounce(resize, RESIZE_DEBOUNCE_MS);
 
     function step() {
       ctx.clearRect(0, 0, width, height);
@@ -101,7 +103,6 @@ export default function ParticlesBackground() {
         }
       }
 
-      // Reduced motion: draw exactly one frame and stop, never re-queue.
       if (isVisible && !prefersReducedMotion) {
         frameId = requestAnimationFrame(step);
       }
@@ -119,15 +120,15 @@ export default function ParticlesBackground() {
     resize();
     step();
 
-    window.addEventListener("resize", resize);
+    window.addEventListener("resize", debouncedResize);
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
       if (frameId) cancelAnimationFrame(frameId);
-      window.removeEventListener("resize", resize);
+      window.removeEventListener("resize", debouncedResize);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
-  }, []);
+  }, [prefersReducedMotion]);
 
   return <canvas ref={canvasRef} className="particles-bg" aria-hidden="true" />;
 }

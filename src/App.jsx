@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./components/layout/MainLayout";
 import SectionHeading from "./components/common/SectionHeading";
+import AboutMe from "./pages/AboutMe";
+import Qualifications from "./pages/Qualifications";
 
 /**
- * Temporary stand-in for pages that haven't been built yet — now using
- * the real SectionHeading component instead of one-off inline styles,
- * so it renders consistently with the rest of the design system.
- * Swap each route's `element` below for the real page component as
- * you build src/pages/*.jsx.
+ * Temporary stand-in for pages that haven't been built yet. Swap each
+ * remaining route's `element` below for the real page component as
+ * you build src/pages/*.jsx — About Me and Qualifications are done.
  */
 function Placeholder({ title }) {
   return (
@@ -24,11 +24,8 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<Placeholder title="About Me" />} />
-          <Route
-            path="qualifications"
-            element={<Placeholder title="Qualifications" />}
-          />
+          <Route index element={<AboutMe />} />
+          <Route path="qualifications" element={<Qualifications />} />
           <Route path="skills" element={<Placeholder title="My Skills" />} />
           <Route path="contact" element={<Placeholder title="Contact" />} />
           <Route path="resume" element={<Placeholder title="Resume" />} />

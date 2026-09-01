@@ -1,5 +1,8 @@
 .site-footer {
   display: flex;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
@@ -45,4 +48,13 @@
 .site-footer__icon-link:focus-visible {
   outline: 2px solid var(--accent-cyan);
   outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 2rem;
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  }
 }

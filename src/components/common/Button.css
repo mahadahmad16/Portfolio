@@ -29,12 +29,12 @@
 .btn--secondary {
   color: var(--text-primary);
   background: transparent;
-  border-color: var(--border-hairline);
+  border-color: rgba(77, 177, 213, 0.332);
 }
 
 .btn--secondary:hover {
   border-color: var(--accent-blue-soft);
-  background: rgba(62, 111, 242, 0.08);
+  background: rgba(62, 110, 242, 0.118);
   transform: translateY(-2px);
 }
 

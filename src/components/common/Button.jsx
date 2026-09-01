@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
 import { Link } from "react-router-dom";
+import { cn, isExternalUrl } from "../../utils/helpers";
 import "./Button.css";
 
 /**
@@ -20,7 +21,7 @@ const Button = forwardRef(function Button(
   },
   ref
 ) {
-  const classes = `btn btn--${variant} ${className}`.trim();
+  const classes = cn("btn", `btn--${variant}`, className);
   const content = (
     <>
       {Icon && iconPosition === "left" && <Icon size={18} aria-hidden="true" />}
@@ -30,14 +31,14 @@ const Button = forwardRef(function Button(
   );
 
   if (href) {
-    const isExternal = href.startsWith("http") || href.startsWith("mailto:");
+    const external = isExternalUrl(href);
     return (
       <a
         ref={ref}
         href={href}
         className={classes}
-        target={isExternal ? "_blank" : undefined}
-        rel={isExternal ? "noreferrer" : undefined}
+        target={external ? "_blank" : undefined}
+        rel={external ? "noreferrer" : undefined}
         {...rest}
       >
         {content}

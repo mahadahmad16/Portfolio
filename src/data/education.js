@@ -5,7 +5,7 @@
  */
 export const EDUCATION = [
   {
-    institution: "GIFT University",
+    institution: "GIFT University, Gujranwala, Pakistan",
     degree: "BS Computer Science",
     duration: "2023–2027",
     cgpa: "3.17",

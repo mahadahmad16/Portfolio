@@ -37,7 +37,7 @@
   color: var(--text-muted);
 }
 
-.education-card__cgpa {
+.education-card__result {
   margin: 0.35rem 0 0;
   font-family: var(--font-mono);
   font-size: 0.78rem;

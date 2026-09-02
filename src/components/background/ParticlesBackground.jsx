@@ -14,14 +14,6 @@ function getParticleCount(width, height) {
   return Math.min(90, Math.max(28, Math.round(area / 22000)));
 }
 
-/**
- * Fixed, full-viewport ambient background: slow drifting particles with
- * faint connecting lines when they pass near each other. Freezes to a
- * single static frame under prefers-reduced-motion, and — since
- * useReducedMotion is reactive — starts/stops live if the user toggles
- * that OS setting while the page is open. Resize handling is debounced
- * so dragging the window doesn't rebuild the particle set every pixel.
- */
 export default function ParticlesBackground() {
   const canvasRef = useRef(null);
   const prefersReducedMotion = useReducedMotion();

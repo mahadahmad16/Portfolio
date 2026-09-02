@@ -1,0 +1,59 @@
+.games {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.games__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.games__tab {
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-hairline);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease-out), background 0.2s var(--ease-out),
+    color 0.2s var(--ease-out);
+}
+
+.games__tab:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-blue-soft);
+}
+
+.games__tab--active {
+  color: var(--text-primary);
+  background: rgba(62, 111, 242, 0.12);
+  border-color: var(--accent-blue-soft);
+}
+
+.games__tab:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+}
+
+.games__panel {
+  display: flex;
+  justify-content: center;
+}
+
+.games__coming-soon {
+  margin: 3rem 0;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .games__tab {
+    transition: none;
+  }
+}

@@ -56,3 +56,51 @@ a.contact-info__value:hover {
   padding-top: 1.25rem;
   border-top: 1px solid var(--border-hairline);
 }
+
+.contact-info__socials > .contact-info__label {
+  margin-bottom: 0.8rem;
+}
+
+.contact-info__social-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-info__social-link {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border-hairline);
+  border-radius: 50%;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s var(--ease-out), border-color 0.2s var(--ease-out),
+    box-shadow 0.2s var(--ease-out), transform 0.2s var(--ease-out);
+}
+
+.contact-info__social-link:hover {
+  border-color: var(--accent-blue-soft);
+  color: var(--accent-cyan);
+  box-shadow: 0 0 12px rgba(95, 212, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.contact-info__social-link:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-info__social-link {
+    transition: none;
+  }
+
+  .contact-info__social-link:hover {
+    transform: none;
+  }
+}

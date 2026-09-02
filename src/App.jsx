@@ -3,6 +3,15 @@ import MainLayout from "./components/layout/MainLayout";
 import SectionHeading from "./components/common/SectionHeading";
 import AboutMe from "./pages/AboutMe";
 import Qualifications from "./pages/Qualifications";
+import MySkills from "./pages/MySkills";
+import Contact from "./pages/Contact";
+import Resume from "./pages/Resume";
+import Certificates from "./pages/Certificates";
+import Projects from "./pages/MyProjects";
+import Games from "./pages/Games";
+import SnakeGame from "../src/components/games/snake/SnakeGame";
+import TicTacToe from "../src/components/games/tic-tac-toe/TicTacToe";
+import RockPaperScissors from "../src/components/games/rock-paper-scissors/RockPaperScissors";
 
 /**
  * Temporary stand-in for pages that haven't been built yet. Swap each
@@ -26,26 +35,26 @@ export default function App() {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<AboutMe />} />
           <Route path="qualifications" element={<Qualifications />} />
-          <Route path="skills" element={<Placeholder title="My Skills" />} />
-          <Route path="contact" element={<Placeholder title="Contact" />} />
-          <Route path="resume" element={<Placeholder title="Resume" />} />
+          <Route path="skills" element={<MySkills />} />
+          <Route path="contact" element={<Contact/>} />
+          <Route path="resume" element={<Resume />} />
           <Route
             path="certificates"
-            element={<Placeholder title="Certificates" />}
+            element={<Certificates />}
           />
-          <Route path="projects" element={<Placeholder title="My Projects" />} />
-          <Route path="games" element={<Placeholder title="Games" />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="games" element={<Games />} />
           <Route
             path="games/snake"
-            element={<Placeholder title="Snake Game" />}
+            element={<SnakeGame />}
           />
           <Route
             path="games/tic-tac-toe"
-            element={<Placeholder title="Tic-Tac-Toe" />}
+            element={<TicTacToe />}
           />
           <Route
             path="games/rock-paper-scissors"
-            element={<Placeholder title="Rock-Paper-Scissors" />}
+            element={<RockPaperScissors />}
           />
         </Route>
       </Routes>

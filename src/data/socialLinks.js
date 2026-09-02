@@ -10,5 +10,4 @@ export const SOCIAL_LINKS = [
     href: "https://www.linkedin.com/in/mahad-ahmad-4a19b32a7/",
   },
   { label: "WhatsApp", href: "https://wa.me/923305458458" },
-  { label: "Mail", href: "mailto:mahadahmadhtm@gmail.com" }
 ];

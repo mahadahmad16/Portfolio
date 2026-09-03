@@ -12,11 +12,9 @@
   padding: 0 clamp(1rem, 3vw, 2rem);
 
   /* Semi-transparent dark glass */
-  background: rgba(7, 12, 24, 0.72);
-
-  /* Actual glassmorphism */
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  background: rgba(5, 10, 20, 0.60);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
 
   /* Subtle glass edge */
   border-bottom: 1px solid rgba(120, 150, 200, 0.12);

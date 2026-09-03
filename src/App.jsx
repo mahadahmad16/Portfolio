@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import MainLayout from "./components/layout/MainLayout";
 import SectionHeading from "./components/common/SectionHeading";
 import AboutMe from "./pages/AboutMe";
@@ -12,6 +13,7 @@ import Games from "./pages/Games";
 import SnakeGame from "../src/components/games/snake/SnakeGame";
 import TicTacToe from "../src/components/games/tic-tac-toe/TicTacToe";
 import RockPaperScissors from "../src/components/games/rock-paper-scissors/RockPaperScissors";
+import SplashScreen from "./components/common/SplashScreen";
 
 /**
  * Temporary stand-in for pages that haven't been built yet. Swap each
@@ -29,8 +31,10 @@ function Placeholder({ title }) {
 }
 
 export default function App() {
+  const [showSplash, setShowSplash] = useState(true);
   return (
     <BrowserRouter>
+    {showSplash && <SplashScreen onFinish={() => setShowSplash(false)} />}
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<AboutMe />} />

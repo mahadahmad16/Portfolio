@@ -1,4 +1,4 @@
-import resume from "../../assets/certificates/resume.pdf";
+// import resume from "../../assets/certificates/CV.pdf";
 import { FolderGit2, Mail, Download } from "lucide-react";
 import Button from "../common/Button";
 import TypingText from "../common/TypingText";
@@ -31,8 +31,8 @@ export default function Hero() {
           Contact Me
         </Button>
         <Button
-          href={resume}
-          download="Resume-Mahad-Ahmad.pdf"
+          href="/resume.pdf"
+          download="Resume-Mahad Ahmad.pdf"
           variant="secondary"
           icon={Download}
         >

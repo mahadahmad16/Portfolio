@@ -21,7 +21,7 @@ export default function Resume() {
 
       <GlowCard className="resume__card">
         <div className="resume__preview">
-          <iframe src="/resume.pdf" title="Mahad Ahmad's resume" className="resume__frame" />
+          <iframe src={CV} title="Mahad Ahmad's resume" className="resume__frame" />
         </div>
 
         <Button

@@ -31,7 +31,7 @@ export default function Hero() {
           Contact Me
         </Button>
         <Button
-          href="/resume.pdf"
+          href="/Resume-Mahad-Ahmad.pdf"
           download="Resume-Mahad Ahmad.pdf"
           variant="secondary"
           icon={Download}

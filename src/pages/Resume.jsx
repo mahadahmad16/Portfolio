@@ -1,4 +1,3 @@
-// import CV from "../assets/certificates/CV.pdf"
 import { Download } from "lucide-react";
 import SectionHeading from "../components/common/SectionHeading";
 import Button from "../components/common/Button";
@@ -21,11 +20,11 @@ export default function Resume() {
 
       <GlowCard className="resume__card">
         <div className="resume__preview">
-          <iframe src="/resume.pdf" title="Mahad Ahmad's resume" className="resume__frame" />
+          <iframe src="/Resume-Mahad-Ahmad.pdf" title="Mahad Ahmad's resume" className="resume__frame" />
         </div>
 
         <Button
-          href="/resume.pdf"
+          href="/Resume-Mahad-Ahmad.pdf"
           download="Resume-Mahad Ahmad.pdf"
           variant="primary"
           icon={Download}

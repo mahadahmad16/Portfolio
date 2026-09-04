@@ -24,7 +24,7 @@
   display: grid;
   place-items: center;
   color: var(--accent-cyan);
-  opacity: 0.6;
+  opacity: 1;
   background: linear-gradient(
     135deg,
     rgba(62, 111, 242, 0.18),

@@ -1,10 +1,10 @@
+import resume from "../../assets/certificates/CV.pdf";
 import { FolderGit2, Mail, Download } from "lucide-react";
 import Button from "../common/Button";
 import TypingText from "../common/TypingText";
 import "./Hero.css";
-import resume from "../../assets/certificates/CV.pdf";
 
-const ROLES = ["MERN Stack Developer", "UI/UX Designer"];
+const ROLES = ["Frontend Developer", "UI/UX Designer", "Video Editor"];
 
 /**
  * Landing block for the About Me page: name, cycling role title,
@@ -30,7 +30,12 @@ export default function Hero() {
         <Button to="/contact" variant="secondary" icon={Mail}>
           Contact Me
         </Button>
-        <Button href={resume} download variant="secondary" icon={Download}>
+        <Button
+          href={resume}
+          download="Resume-Mahad Ahmad.pdf"
+          variant="secondary"
+          icon={Download}
+        >
           Download Resume
         </Button>
       </div>

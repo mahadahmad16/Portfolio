@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import SectionHeading from "../components/common/SectionHeading";
 import GlowCard from "../components/common/GlowCard";
 import { CERTIFICATES } from "../data/certificates";
@@ -54,30 +55,32 @@ export default function Certificates() {
         ))}
       </div>
 
-      {activeCertificate && (
-        <div
-          className="certificates__lightbox"
-          role="dialog"
-          aria-modal="true"
-          aria-label={activeCertificate.title}
-          onClick={() => setActiveCertificate(null)}
-        >
-          <button
-            type="button"
-            className="certificates__lightbox-close"
+      {activeCertificate &&
+        createPortal(
+          <div
+            className="certificates__lightbox"
+            role="dialog"
+            aria-modal="true"
+            aria-label={activeCertificate.title}
             onClick={() => setActiveCertificate(null)}
-            aria-label="Close"
           >
-            ×
-          </button>
-          <img
-            src={activeCertificate.image}
-            alt={activeCertificate.title}
-            className="certificates__lightbox-img"
-            onClick={(event) => event.stopPropagation()}
-          />
-        </div>
-      )}
+            <button
+              type="button"
+              className="certificates__lightbox-close"
+              onClick={() => setActiveCertificate(null)}
+              aria-label="Close"
+            >
+              ×
+            </button>
+            <img
+              src={activeCertificate.image}
+              alt={activeCertificate.title}
+              className="certificates__lightbox-img"
+              onClick={(event) => event.stopPropagation()}
+            />
+          </div>,
+          document.body
+        )}
     </div>
   );
 }

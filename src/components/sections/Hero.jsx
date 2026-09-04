@@ -1,4 +1,4 @@
-import resume from "../../assets/certificates/CV.pdf";
+import resume from "../../assets/certificates/resume.pdf";
 import { FolderGit2, Mail, Download } from "lucide-react";
 import Button from "../common/Button";
 import TypingText from "../common/TypingText";

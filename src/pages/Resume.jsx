@@ -1,4 +1,4 @@
-import CV from "../assets/certificates/CV.pdf"
+import CV from "../assets/certificates/resume.pdf"
 import { Download } from "lucide-react";
 import SectionHeading from "../components/common/SectionHeading";
 import Button from "../components/common/Button";

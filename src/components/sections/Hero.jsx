@@ -4,7 +4,7 @@ import Button from "../common/Button";
 import TypingText from "../common/TypingText";
 import "./Hero.css";
 
-const ROLES = ["Frontend Developer", "UI/UX Designer", "Video Editor"];
+const ROLES = ["MERN Stack Developer", "UI/UX Designer"];
 
 /**
  * Landing block for the About Me page: name, cycling role title,

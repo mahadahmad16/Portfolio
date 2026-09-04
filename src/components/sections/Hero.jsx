@@ -32,7 +32,7 @@ export default function Hero() {
         </Button>
         <Button
           href={resume}
-          download="Resume-Mahad Ahmad.pdf"
+          download="Resume-Mahad-Ahmad.pdf"
           variant="secondary"
           icon={Download}
         >

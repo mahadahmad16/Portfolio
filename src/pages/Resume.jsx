@@ -26,7 +26,7 @@ export default function Resume() {
 
         <Button
           href={CV}
-          download="Resume-Mahad Ahmad.pdf"
+          download="Resume-Mahad-Ahmad.pdf"
           variant="primary"
           icon={Download}
         >

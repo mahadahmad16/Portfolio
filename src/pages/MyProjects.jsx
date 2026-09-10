@@ -1,4 +1,4 @@
-import { ExternalLink, FolderGit2 } from "lucide-react";
+import { ExternalLink, FolderGit2, Play } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import SectionHeading from "../components/common/SectionHeading";
 import GlowCard from "../components/common/GlowCard";
@@ -32,9 +32,14 @@ export default function MyProjects() {
           >
             <div className="my-projects__preview">
               {project.image ? (
-                <img src={project.image} alt={project.imageAlt || `${project.name} preview`} />
+                <img
+                  src={project.image}
+                  alt={project.imageAlt || `${project.name} preview`}
+                />
               ) : (
-                <FolderGit2 size={28} strokeWidth={1.5} aria-hidden="true" />
+                <span className="my-projects__preview-icon" aria-hidden="true">
+                  <FolderGit2 size={28} strokeWidth={1.5} />
+                </span>
               )}
             </div>
 
@@ -55,6 +60,17 @@ export default function MyProjects() {
               {project.liveUrl && (
                 <Button href={project.liveUrl} variant="primary" icon={ExternalLink}>
                   Live Demo
+                </Button>
+              )}
+              {project.video && (
+                <Button
+                  href={project.video}
+                  target="_blank"
+                  rel="noreferrer"
+                  variant="primary"
+                  icon={Play}
+                >
+                  Video Demo
                 </Button>
               )}
               {project.githubUrl && (

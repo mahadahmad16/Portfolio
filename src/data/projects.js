@@ -4,6 +4,8 @@
  * technologies, githubUrl, liveUrl, image) match the ProjectCard built
  * earlier in this project — rename if your own version differs.
  */
+
+import CodeSyncVideo from "../assets/Videos/CodeSync.mp4";
 export const PROJECTS = [
   {
     name: "QuickBite",
@@ -48,4 +50,20 @@ export const PROJECTS = [
     githubUrl: "https://github.com/mahadahmad16/al-dhaw-al-wahaj.git",
     liveUrl: "https://al-dhaw-al-wahaj.lovable.app",
   },
+  {
+    name: "CodeSync",
+    image: "https://unsplash.com/photos/5fNmWej4tAA/download?force=true",
+    imageAlt: "Laptop with code editor open",
+    description:
+      "A real-time collaborative code editor where users can write and edit code together in a shared environment.",
+    technologies: [
+      "React",
+      "Node.js",
+      "Socket.io",
+      "Express.js",
+      "Git & GitHub",
+    ],
+    githubUrl: "https://github.com/mahadahmad16/collaborative-code-editor.git",
+    video: CodeSyncVideo,
+  }
 ];

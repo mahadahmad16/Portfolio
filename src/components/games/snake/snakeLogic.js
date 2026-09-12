@@ -8,9 +8,9 @@ export const INITIAL_SNAKE = [
 
 export const INITIAL_DIRECTION = { x: 1, y: 0 };
 
-export const BASE_SPEED_MS = 140;
-export const MIN_SPEED_MS = 70;
-export const SPEED_STEP_MS = 4;
+export const BASE_SPEED_MS = 80;
+export const MIN_SPEED_MS = 90;
+export const SPEED_STEP_MS = 3;
 
 const DIRECTIONS = {
   ArrowUp: { x: 0, y: -1 },

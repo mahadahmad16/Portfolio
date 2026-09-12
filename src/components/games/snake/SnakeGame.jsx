@@ -16,6 +16,7 @@ import {
 import "./SnakeGame.css";
 
 const CELL_SIZE = 18; // px — canvas is GRID_SIZE * CELL_SIZE square
+const SWIPE_THRESHOLD = 30; // px — minimum drag distance before it counts as a swipe, not a tap
 
 /**
  * Classic Snake, canvas-rendered. Arrow keys / WASD on desktop, the
@@ -24,6 +25,7 @@ const CELL_SIZE = 18; // px — canvas is GRID_SIZE * CELL_SIZE square
  */
 export default function SnakeGame() {
   const canvasRef = useRef(null);
+  const boardRef = useRef(null); // touch target for swipe gestures
   const stateRef = useRef(null); // mutable game state read by the loop, avoids stale closures
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
@@ -159,6 +161,55 @@ export default function SnakeGame() {
     if (next) stateRef.current.nextDirection = next;
   }
 
+  // Swipe controls for touch devices — reuses handleDpadPress so a
+  // swipe does exactly what pressing the matching D-pad button does.
+  // Attached with native addEventListener (not React's onTouch* props)
+  // because touchmove needs { passive: false } to call preventDefault
+  // — otherwise swiping on the board scrolls the page instead.
+  useEffect(() => {
+    const board = boardRef.current;
+    if (!board) return;
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    function handleTouchStart(event) {
+      const touch = event.touches[0];
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+    }
+
+    function handleTouchMove(event) {
+      event.preventDefault();
+    }
+
+    function handleTouchEnd(event) {
+      const touch = event.changedTouches[0];
+      const deltaX = touch.clientX - touchStartX;
+      const deltaY = touch.clientY - touchStartY;
+
+      if (Math.abs(deltaX) < SWIPE_THRESHOLD && Math.abs(deltaY) < SWIPE_THRESHOLD) {
+        return; // too small to count as an intentional swipe
+      }
+
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        handleDpadPress(deltaX > 0 ? "ArrowRight" : "ArrowLeft");
+      } else {
+        handleDpadPress(deltaY > 0 ? "ArrowDown" : "ArrowUp");
+      }
+    }
+
+    board.addEventListener("touchstart", handleTouchStart, { passive: true });
+    board.addEventListener("touchmove", handleTouchMove, { passive: false });
+    board.addEventListener("touchend", handleTouchEnd, { passive: true });
+
+    return () => {
+      board.removeEventListener("touchstart", handleTouchStart);
+      board.removeEventListener("touchmove", handleTouchMove);
+      board.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, [status]);
+
   return (
     <GlowCard as="section" className="snake-game">
       <div className="snake-game__header">
@@ -170,7 +221,7 @@ export default function SnakeGame() {
         </p>
       </div>
 
-      <div className="snake-game__board">
+      <div className="snake-game__board" ref={boardRef}>
         <canvas
           ref={canvasRef}
           width={GRID_SIZE * CELL_SIZE}
@@ -227,7 +278,10 @@ export default function SnakeGame() {
         </button>
       </div>
 
-      <p className="snake-game__hint">Arrow keys or WASD to move.</p>
+      <p className="snake-game__hint">
+        <span className="snake-game__hint--desktop">Arrow keys or WASD to move.</span>
+        <span className="snake-game__hint--mobile">Swipe or use the buttons to move.</span>
+      </p>
     </GlowCard>
   );
 }

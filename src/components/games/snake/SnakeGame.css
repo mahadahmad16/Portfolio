@@ -36,6 +36,7 @@
   overflow: hidden;
   border: 1px solid var(--border-hairline);
   background: rgba(2, 4, 8, 0.6);
+  touch-action: none;
 }
 
 .snake-game__board canvas {
@@ -122,8 +123,16 @@
   color: var(--text-muted);
 }
 
+.snake-game__hint--mobile {
+  display: none;
+}
+
 @media (max-width: 480px) {
-  .snake-game__hint {
+  .snake-game__hint--desktop {
     display: none;
+  }
+
+  .snake-game__hint--mobile {
+    display: inline;
   }
 }

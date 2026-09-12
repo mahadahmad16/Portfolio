@@ -55,8 +55,15 @@ export function getNextHead(snake, direction) {
   return { x: head.x + direction.x, y: head.y + direction.y };
 }
 
-export function hasHitWall(head, gridSize = GRID_SIZE) {
-  return head.x < 0 || head.x >= gridSize || head.y < 0 || head.y >= gridSize;
+/** Wraps a position around the grid edges instead of treating them as
+ *  walls — go off the right edge and you re-appear on the left, and
+ *  the same for top/bottom. Self-collision is still the only way to
+ *  lose (see hasHitSelf below). */
+export function wrapPosition(position, gridSize = GRID_SIZE) {
+  return {
+    x: (position.x + gridSize) % gridSize,
+    y: (position.y + gridSize) % gridSize,
+  };
 }
 
 export function hasHitSelf(head, snake) {

@@ -9,7 +9,7 @@ import {
   getNextDirection,
   getRandomFoodPosition,
   getNextHead,
-  hasHitWall,
+  wrapPosition,
   hasHitSelf,
   getSpeedForScore,
 } from "./snakeLogic";
@@ -19,9 +19,11 @@ const CELL_SIZE = 18; // px — canvas is GRID_SIZE * CELL_SIZE square
 const SWIPE_THRESHOLD = 30; // px — minimum drag distance before it counts as a swipe, not a tap
 
 /**
- * Classic Snake, canvas-rendered. Arrow keys / WASD on desktop, the
- * on-screen D-pad on touch devices. Auto-pauses when the tab loses
- * focus so it doesn't keep running (and scoring) in the background.
+ * Classic Snake, canvas-rendered. Arrow keys / WASD on desktop, swipe
+ * or the on-screen D-pad on touch devices. Edges wrap around instead
+ * of ending the game — only running into yourself does that. Auto-
+ * pauses when the tab loses focus so it doesn't keep running (and
+ * scoring) in the background.
  */
 export default function SnakeGame() {
   const canvasRef = useRef(null);
@@ -98,9 +100,9 @@ export default function SnakeGame() {
     if (!state) return;
 
     state.direction = state.nextDirection;
-    const nextHead = getNextHead(state.snake, state.direction);
+    const nextHead = wrapPosition(getNextHead(state.snake, state.direction));
 
-    if (hasHitWall(nextHead) || hasHitSelf(nextHead, state.snake)) {
+    if (hasHitSelf(nextHead, state.snake)) {
       setStatus("gameover");
       setBestScore((best) => Math.max(best, score));
       return;

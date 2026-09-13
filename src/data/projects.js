@@ -1,10 +1,3 @@
-/**
- * Consumed by whatever ProjectCard/ProjectGrid lives in
- * components/projects/. Field names here (name, description,
- * technologies, githubUrl, liveUrl, image) match the ProjectCard built
- * earlier in this project — rename if your own version differs.
- */
-
 import CodeSyncVideo from "../assets/Videos/CodeSync.mp4";
 export const PROJECTS = [
   {
@@ -62,6 +55,7 @@ export const PROJECTS = [
       "Socket.io",
       "Express.js",
       "Git & GitHub",
+      "MongoDB",
     ],
     githubUrl: "https://github.com/mahadahmad16/collaborative-code-editor.git",
     video: CodeSyncVideo,

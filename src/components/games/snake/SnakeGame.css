@@ -35,7 +35,7 @@
   border-radius: var(--radius-sm);
   overflow: hidden;
   border: 1px solid var(--border-hairline);
-  background: rgba(2, 4, 8, 0.6);
+  background: var(--bg-void);
   touch-action: none;
 }
 
@@ -53,7 +53,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  background: rgba(6, 9, 17, 0.82);
+  background: var(--bg-void);
   backdrop-filter: blur(4px);
   text-align: center;
   padding: 1rem;
@@ -79,7 +79,7 @@
   place-items: center;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-hairline);
-  background: rgba(62, 111, 242, 0.08);
+  background: color-mix(in srgb, var(--accent-blue) 8%, transparent);
   color: var(--text-primary);
   cursor: pointer;
   transition: border-color 0.2s var(--ease-out), background 0.2s var(--ease-out);
@@ -88,7 +88,7 @@
 .snake-game__dpad-btn:hover,
 .snake-game__dpad-btn:active {
   border-color: var(--accent-blue-soft);
-  background: rgba(62, 111, 242, 0.18);
+  background: color-mix(in srgb, var(--accent-blue) 18%, transparent);
 }
 
 .snake-game__dpad-btn:focus-visible {

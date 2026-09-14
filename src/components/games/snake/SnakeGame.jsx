@@ -55,6 +55,10 @@ export default function SnakeGame() {
     const ctx = canvas.getContext("2d");
     const { snake, food } = stateRef.current;
     const size = GRID_SIZE * CELL_SIZE;
+    const styles = getComputedStyle(document.documentElement);
+    const accentBlue = styles.getPropertyValue("--accent-blue").trim();
+    const accentBlueSoft = styles.getPropertyValue("--accent-blue-soft").trim();
+    const accentCyan = styles.getPropertyValue("--accent-cyan").trim();
 
     ctx.clearRect(0, 0, size, size);
 
@@ -67,8 +71,8 @@ export default function SnakeGame() {
     }
 
     // Food
-    ctx.fillStyle = "#5fd4ff";
-    ctx.shadowColor = "#5fd4ff";
+    ctx.fillStyle = accentCyan;
+    ctx.shadowColor = accentCyan;
     ctx.shadowBlur = 12;
     roundedRect(ctx, food.x * CELL_SIZE + 2, food.y * CELL_SIZE + 2, CELL_SIZE - 4, CELL_SIZE - 4, 4);
     ctx.fill();
@@ -77,9 +81,9 @@ export default function SnakeGame() {
     // Snake
     snake.forEach((segment, index) => {
       const isHead = index === 0;
-      ctx.fillStyle = isHead ? "#3e6ff2" : "rgba(62, 111, 242, 0.75)";
+      ctx.fillStyle = isHead ? accentBlue : accentBlueSoft;
       if (isHead) {
-        ctx.shadowColor = "#3e6ff2";
+        ctx.shadowColor = accentBlue;
         ctx.shadowBlur = 10;
       }
       roundedRect(
@@ -133,6 +137,12 @@ export default function SnakeGame() {
   useEffect(() => {
     draw();
   }, [status, draw]);
+
+  useEffect(() => {
+    const themeObserver = new MutationObserver(draw);
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+    return () => themeObserver.disconnect();
+  }, [draw]);
 
   // Keyboard controls
   useEffect(() => {

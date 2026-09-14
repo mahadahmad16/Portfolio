@@ -16,25 +16,25 @@
 }
 
 .btn--primary {
-  color: #05070c;
+  color: var(--bg-void);
   background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-  box-shadow: 0 0 22px rgba(62, 111, 242, 0.35);
+  box-shadow: 0 0 22px var(--accent-blue-soft);
 }
 
 .btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 28px rgba(95, 212, 255, 0.5);
+  box-shadow: 0 0 28px var(--accent-cyan-soft);
 }
 
 .btn--secondary {
   color: var(--text-primary);
   background: transparent;
-  border-color: rgba(77, 177, 213, 0.332);
+  border-color: var(--accent-blue-soft);
 }
 
 .btn--secondary:hover {
   border-color: var(--accent-blue-soft);
-  background: rgba(62, 110, 242, 0.118);
+  background: color-mix(in srgb, var(--accent-blue) 12%, transparent);
   transform: translateY(-2px);
 }
 

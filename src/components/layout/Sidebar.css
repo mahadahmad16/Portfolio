@@ -56,12 +56,12 @@
 .sidebar__link:hover,
 .sidebar__link--toggle:hover {
   color: var(--text-primary);
-  background: rgba(62, 111, 242, 0.08);
+  background: color-mix(in srgb, var(--accent-blue) 8%, transparent);
 }
 
 .sidebar__link--active {
   color: var(--text-primary);
-  background: rgba(62, 111, 242, 0.12);
+  background: color-mix(in srgb, var(--accent-blue) 12%, transparent);
 }
 
 .sidebar__link--active::before {

@@ -3,10 +3,8 @@ import useReducedMotion from "../../hooks/useReducedMotion";
 import { debounce } from "../../utils/helpers";
 import "./ParticlesBackground.css";
 
-// accent-cyan as an "r, g, b" triplet so it can be dropped into rgba()
-const PARTICLE_COLOR = "95, 212, 255";
 const LINK_DISTANCE = 130; // px — lines only draw between particles closer than this
-const BASE_SPEED = 0.12; // px per frame — kept slow and lightweight on purpose
+const BASE_SPEED = 0.150; // px per frame — kept slow and lightweight on purpose
 const RESIZE_DEBOUNCE_MS = 150;
 
 function getParticleCount(width, height) {
@@ -28,6 +26,9 @@ export default function ParticlesBackground() {
     let particles = [];
     let frameId = null;
     let isVisible = true;
+    let particleColor = getComputedStyle(document.documentElement)
+      .getPropertyValue("--accent-cyan-rgb")
+      .trim();
 
     function createParticles() {
       const count = getParticleCount(width, height);
@@ -55,7 +56,7 @@ export default function ParticlesBackground() {
 
     const debouncedResize = debounce(resize, RESIZE_DEBOUNCE_MS);
 
-    function step() {
+    function draw() {
       ctx.clearRect(0, 0, width, height);
 
       for (const p of particles) {
@@ -71,7 +72,7 @@ export default function ParticlesBackground() {
         const glow = 0.4 + Math.sin(p.pulse) * 0.25; // slow soft pulse
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${PARTICLE_COLOR}, ${glow})`;
+        ctx.fillStyle = `rgba(${particleColor}, ${glow})`;
         ctx.fill();
       }
 
@@ -88,13 +89,18 @@ export default function ParticlesBackground() {
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = `rgba(${PARTICLE_COLOR}, ${opacity})`;
+            ctx.strokeStyle = `rgba(${particleColor}, ${opacity})`;
             ctx.lineWidth = 1;
             ctx.stroke();
           }
         }
       }
 
+    }
+
+    function step() {
+      frameId = null;
+      draw();
       if (isVisible && !prefersReducedMotion) {
         frameId = requestAnimationFrame(step);
       }
@@ -102,21 +108,33 @@ export default function ParticlesBackground() {
 
     function handleVisibilityChange() {
       isVisible = !document.hidden;
-      if (isVisible && !prefersReducedMotion) {
+      if (isVisible && !prefersReducedMotion && frameId === null) {
         frameId = requestAnimationFrame(step);
       } else if (frameId) {
         cancelAnimationFrame(frameId);
       }
     }
 
+    const themeObserver = new MutationObserver(() => {
+      particleColor = getComputedStyle(document.documentElement)
+        .getPropertyValue("--accent-cyan-rgb")
+        .trim();
+      draw();
+    });
+
     resize();
-    step();
+    draw();
+    if (!prefersReducedMotion) {
+      frameId = requestAnimationFrame(step);
+    }
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
 
     window.addEventListener("resize", debouncedResize);
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
       if (frameId) cancelAnimationFrame(frameId);
+      themeObserver.disconnect();
       window.removeEventListener("resize", debouncedResize);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };

@@ -1,16 +1,17 @@
 /* ---------------------------------------------------------------
-   Theme tokens — dark, technical, dark-blue-neon direction.
-   Every layout/background component reads its colors, type and
-   spacing from here so the theme stays consistent and easy to
-   retune from one place.
+   Theme tokens — dark, technical, dark-blue-neon direction by
+   default, with 4 alternate color themes below. Every component
+   reads its colors, type and spacing from these variables, so
+   switching themes only ever means changing values here — never
+   touching individual component CSS files.
 ------------------------------------------------------------------ */
 
 :root {
-  /* Color */
+  /* Color (default / "blue" theme) */
   --bg-void: #060911;               /* page background */
   --bg-panel: #0d121e;              /* solid panel surface (no blur) */
   --bg-panel-glass: rgba(13, 18, 30, 0.62); /* glass panels: topbar, sidebar */
-  --accent-blue: #3e6ff2;           /* primary neon-blue accent */
+  --accent-blue: #3e6ff2;           /* primary accent */
   --accent-blue-soft: rgba(62, 111, 242, 0.35);
   --accent-cyan: #5fd4ff;           /* secondary glow highlight */
   --text-primary: #e8ecf6;
@@ -18,8 +19,8 @@
   --border-hairline: rgba(255, 255, 255, 0.08);
 
   /* Type */
-  --font-display: "Sora", sans-serif;           /* headings */
-  --font-body: "Manrope", sans-serif;           /* body copy */
+  --font-display: "Space Grotesk", sans-serif; /* headings */
+  --font-body: "Inter", sans-serif;            /* body copy */
   --font-mono: "JetBrains Mono", monospace;    /* nav labels, eyebrows, tags */
 
   /* Layout */
@@ -30,4 +31,50 @@
 
   /* Motion */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Alternate themes ---------------------------------------------
+   Set via document.documentElement.setAttribute("data-theme", id) —
+   see hooks/useTheme.js. Only the color tokens change; type, layout
+   and motion tokens stay the same across every theme. Note: variable
+   *names* below still say "blue"/"cyan" even though their *values*
+   are green/red/purple/grey here — renaming them would mean touching
+   every component CSS file that references them, so the names are
+   kept stable and only the values swap per theme.
+-------------------------------------------------------------------- */
+
+[data-theme="green"] {
+  --bg-void: #05100b;
+  --bg-panel: #0b1a13;
+  --bg-panel-glass: rgba(11, 26, 19, 0.62);
+  --accent-blue: #22b56e;
+  --accent-blue-soft: rgba(34, 181, 110, 0.35);
+  --accent-cyan: #6ee7a0;
+}
+
+[data-theme="red"] {
+  --bg-void: #120607;
+  --bg-panel: #1e0d0f;
+  --bg-panel-glass: rgba(30, 13, 15, 0.62);
+  --accent-blue: #e0384f;
+  --accent-blue-soft: rgba(224, 56, 79, 0.35);
+  --accent-cyan: #ff8394;
+}
+
+[data-theme="purple"] {
+  --bg-void: #0b0714;
+  --bg-panel: #160f22;
+  --bg-panel-glass: rgba(22, 15, 34, 0.62);
+  --accent-blue: #8b5cf6;
+  --accent-blue-soft: rgba(139, 92, 246, 0.35);
+  --accent-cyan: #c4b5fd;
+}
+
+[data-theme="grey"] {
+  --bg-void: #0a0a0c;
+  --bg-panel: #151517;
+  --bg-panel-glass: rgba(21, 21, 23, 0.62);
+  --accent-blue: #9ca3af;
+  --accent-blue-soft: rgba(156, 163, 175, 0.35);
+  --accent-cyan: #e5e7eb;
 }

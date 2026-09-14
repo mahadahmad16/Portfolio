@@ -1,12 +1,14 @@
-import { Menu, X } from "lucide-react";
-import "./Topbar.css";
 import profilePhoto from "../../assets/images/My Photo.png";
+import { Menu, X } from "lucide-react";
+import ThemeSwitcher from "../common/ThemeSwitcher";
+import "./Topbar.css";
 
 /**
- * Fixed top bar: brand mark on the left, hamburger toggle on the right
- * (visible on small screens only — the Sidebar is always visible on
- * desktop). Swap `.topbar__avatar`'s initials for the real profile
- * photo once it's available: <img src={profilePhoto} alt="Mahad Ahmad" />
+ * Fixed top bar: brand mark on the left, theme switcher + hamburger
+ * toggle on the right (the hamburger is visible on small screens only
+ * — the Sidebar is always visible on desktop). Swap `.topbar__avatar`'s
+ * initials for the real profile photo once it's available:
+ * <img src={profilePhoto} alt="Mahad Ahmad" />
  */
 export default function Topbar({ isSidebarOpen, onToggleSidebar }) {
   return (
@@ -18,16 +20,20 @@ export default function Topbar({ isSidebarOpen, onToggleSidebar }) {
         <span className="topbar__name">Mahad Ahmad</span>
       </div>
 
-      <button
-        type="button"
-        className="topbar__menu-btn"
-        onClick={onToggleSidebar}
-        aria-label={isSidebarOpen ? "Close navigation menu" : "Open navigation menu"}
-        aria-expanded={isSidebarOpen}
-        aria-controls="primary-sidebar"
-      >
-        {isSidebarOpen ? <X size={22} /> : <Menu size={22} />}
-      </button>
+      <div className="topbar__actions">
+        <ThemeSwitcher />
+
+        <button
+          type="button"
+          className="topbar__menu-btn"
+          onClick={onToggleSidebar}
+          aria-label={isSidebarOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isSidebarOpen}
+          aria-controls="primary-sidebar"
+        >
+          {isSidebarOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
+      </div>
     </header>
   );
 }

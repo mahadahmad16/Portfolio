@@ -11,4 +11,11 @@ export const EXPERIENCE = [
     description:
       "Completed two development tasks, built professional-looking websites, and prepared weekly progress reports.",
   },
+  {
+    role: "Frontend Developer Intern",
+    company: "Progree",
+    duration: "4 Weeks",
+    description:
+      "Completed three development tasks, built professional-looking responsive websites including a weather app.",
+  }
 ];

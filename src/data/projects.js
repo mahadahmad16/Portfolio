@@ -39,9 +39,9 @@ export const PROJECTS = [
     imageAlt: "Industrial fan and ventilation equipment",
     description:
       "A website where users can easily explore different fan companies and their products and discover available fan products.",
-    technologies: ["React", "TypeScript", "Bootstrap CSS", "Git & GitHub"],
-    githubUrl: "https://github.com/mahadahmad16/al-dhaw-al-wahaj.git",
-    liveUrl: "https://al-dhaw-al-wahaj.lovable.app",
+    technologies: ["HTML", "CSS", "JavaScript", "Git & GitHub"],
+    githubUrl: "https://github.com/mahadahmad16/aldhawalwahaj.git",
+    liveUrl: "https://aldhawalwahaj.vercel.app/",
   },
   {
     name: "CodeSync",

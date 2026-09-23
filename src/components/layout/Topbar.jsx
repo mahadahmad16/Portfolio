@@ -1,6 +1,8 @@
 import profilePhoto from "../../assets/images/My Photo.png";
 import { Menu, X } from "lucide-react";
 import ThemeSwitcher from "../common/ThemeSwitcher";
+import LanguageSwitcher from "../common/LanguageSwitcher";
+import { useLanguage } from "../../context/LanguageContext";
 import "./Topbar.css";
 
 /**
@@ -11,6 +13,7 @@ import "./Topbar.css";
  * <img src={profilePhoto} alt="Mahad Ahmad" />
  */
 export default function Topbar({ isSidebarOpen, onToggleSidebar }) {
+  const { t } = useLanguage();
   return (
     <header className="topbar">
       <div className="topbar__brand">
@@ -22,12 +25,13 @@ export default function Topbar({ isSidebarOpen, onToggleSidebar }) {
 
       <div className="topbar__actions">
         <ThemeSwitcher />
+        <LanguageSwitcher />
 
         <button
           type="button"
           className="topbar__menu-btn"
           onClick={onToggleSidebar}
-          aria-label={isSidebarOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-label={isSidebarOpen ? t("common.closeNavigation") : t("common.openNavigation")}
           aria-expanded={isSidebarOpen}
           aria-controls="primary-sidebar"
         >

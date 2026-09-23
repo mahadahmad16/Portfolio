@@ -3,10 +3,12 @@ import ParticlesBackground from "../background/ParticlesBackground";
 import useReducedMotion from "../../hooks/useReducedMotion";
 import "./SplashScreen.css";
 import profileImage from "../../assets/images/My Photo.png";
+import { useLanguage } from "../../context/LanguageContext";
 
 const DEFAULT_DURATION_MS = 3000; // 3 seconds
 
 export default function SplashScreen({ duration = DEFAULT_DURATION_MS, onFinish }) {
+  const { t } = useLanguage();
   const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
@@ -28,7 +30,7 @@ export default function SplashScreen({ duration = DEFAULT_DURATION_MS, onFinish 
           <img src={profileImage} alt="" />
         </span>
         <h1 className="splash__name">Mahad Ahmad</h1>
-        <p className="splash__badge">Welcome to my portfolio</p>
+        <p className="splash__badge">{t("splash.welcome")}</p>
       </div>
     </div>
   );

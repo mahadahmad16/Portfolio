@@ -1,7 +1,7 @@
 /* Import fonts + tokens. For production, move this @import into
    <link rel="preconnect"/preload"> tags in index.html instead —
    it's faster than an @import, this is just the quick-start version. */
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap");
 @import "./variables.css";
 
 * {
@@ -21,6 +21,36 @@ body {
   color: var(--text-primary);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+}
+
+html[lang="ur"] body {
+  font-family: "Noto Nastaliq Urdu", serif;
+  line-height: 1.9;
+}
+
+html[lang="ur"] h1,
+html[lang="ur"] h2,
+html[lang="ur"] h3,
+html[lang="ur"] h4,
+html[lang="ur"] button,
+html[lang="ur"] input,
+html[lang="ur"] textarea {
+  font-family: "Noto Nastaliq Urdu", serif;
+}
+
+html[dir="rtl"] .main-layout__content { margin-left: 0; margin-right: var(--sidebar-w); }
+html[dir="rtl"] .sidebar { right: 0; left: auto; border-right: none; border-left: 1px solid var(--border-hairline); }
+html[dir="rtl"] .sidebar__link--active::before { right: -1rem; left: auto; }
+html[dir="rtl"] .sidebar__chevron { margin-right: auto; margin-left: 0; }
+html[dir="rtl"] .sidebar__sublist { padding: 0 2.6rem 0 0; }
+html[dir="rtl"] .theme-switcher__menu { right: auto; left: 0; }
+html[dir="rtl"] .certificate-lightbox__close { right: auto; left: 0.8rem; }
+html[dir="rtl"] .certificates__lightbox-close { right: auto; left: 1.5rem; }
+
+@media (max-width: 900px) {
+  html[dir="rtl"] .main-layout__content { margin-right: 0; }
+  html[dir="rtl"] .sidebar { transform: translateX(100%); }
+  html[dir="rtl"] .sidebar--open { transform: translateX(0); }
 }
 
 h1,

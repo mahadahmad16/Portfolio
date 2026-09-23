@@ -2,6 +2,7 @@ import { Download } from "lucide-react";
 import SectionHeading from "../components/common/SectionHeading";
 import Button from "../components/common/Button";
 import GlowCard from "../components/common/GlowCard";
+import { useLanguage } from "../context/LanguageContext";
 import "./Resume.css";
 
 /**
@@ -10,17 +11,18 @@ import "./Resume.css";
  * preview will just show empty/broken.
  */
 export default function Resume() {
+  const { t } = useLanguage();
   return (
     <div className="resume">
       <SectionHeading
-        eyebrow="Resume"
-        title="Resume"
-        description="View it below, or download a copy to keep."
+        eyebrow={t("resume.eyebrow")}
+        title={t("resume.title")}
+        description={t("resume.description")}
       />
 
       <GlowCard className="resume__card">
         <div className="resume__preview">
-          <iframe src="/Resume-Mahad-Ahmad.pdf" title="Mahad Ahmad's resume" className="resume__frame" />
+          <iframe src="/Resume-Mahad-Ahmad.pdf" title={t("resume.frameTitle")} className="resume__frame" />
         </div>
 
         <Button
@@ -29,7 +31,7 @@ export default function Resume() {
           variant="primary"
           icon={Download}
         >
-          Download Resume
+          {t("common.downloadResume")}
         </Button>
       </GlowCard>
     </div>

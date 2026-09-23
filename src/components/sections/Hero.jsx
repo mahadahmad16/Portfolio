@@ -2,33 +2,33 @@
 import { FolderGit2, Mail, Download } from "lucide-react";
 import Button from "../common/Button";
 import TypingText from "../common/TypingText";
+import { useLanguage } from "../../context/LanguageContext";
 import "./Hero.css";
-
-const ROLES = ["MERN Stack Developer", "UI/UX Designer"];
 
 /**
  * Landing block for the About Me page: name, cycling role title,
  * tagline, and the three primary CTAs from the brief.
  */
 export default function Hero() {
+  const { t } = useLanguage();
   return (
     <section className="hero">
       <h1 className="hero__name">Mahad Ahmad</h1>
 
       <p className="hero__role">
-        <TypingText words={ROLES} />
+        <TypingText words={t("hero.roles")} />
       </p>
 
       <p className="hero__tagline">
-        I build modern web applications and intuitive digital experiences.
+        {t("hero.tagline")}
       </p>
 
       <div className="hero__actions">
         <Button to="/projects" variant="primary" icon={FolderGit2}>
-          View My Work
+          {t("hero.viewWork")}
         </Button>
         <Button to="/contact" variant="secondary" icon={Mail}>
-          Contact Me
+          {t("hero.contactMe")}
         </Button>
         <Button
           href="/Resume-Mahad-Ahmad.pdf"
@@ -36,7 +36,7 @@ export default function Hero() {
           variant="secondary"
           icon={Download}
         >
-          Download Resume
+          {t("common.downloadResume")}
         </Button>
       </div>
     </section>

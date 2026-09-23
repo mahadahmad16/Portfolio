@@ -1,5 +1,6 @@
 import { GraduationCap } from "lucide-react";
 import GlowCard from "../common/GlowCard";
+import { useLanguage } from "../../context/LanguageContext";
 import "./EducationCard.css";
 
 export default function EducationCard({
@@ -10,10 +11,11 @@ export default function EducationCard({
   marks,
   Marks: legacyMarks,
 }) {
+  const { t } = useLanguage();
   const result = cgpa
-    ? `Current CGPA: ${cgpa}`
+    ? t("qualifications.cgpa", { value: cgpa })
     : marks || legacyMarks
-      ? `Marks: ${marks || legacyMarks}`
+      ? t("qualifications.marks", { value: marks || legacyMarks })
       : null;
 
   return (

@@ -4,6 +4,7 @@ import SectionHeading from "../components/common/SectionHeading";
 import GlowCard from "../components/common/GlowCard";
 import Button from "../components/common/Button";
 import { PROJECTS } from "../data/projects";
+import { useLanguage } from "../context/LanguageContext";
 import "./MyProjects.css";
 
 /**
@@ -14,12 +15,14 @@ import "./MyProjects.css";
  * either way.
  */
 export default function MyProjects() {
+  const { t } = useLanguage();
+  const projectKeys = { QuickBite: "quickbite", FitMember: "fitmember", "Al-Dhaw-Al-Wahaj": "alDhawAlWahaj", CodeSync: "codesync" };
   return (
     <div className="my-projects">
       <SectionHeading
-        eyebrow="Work"
-        title="My Projects"
-        description="A few things I've built recently."
+        eyebrow={t("projects.eyebrow")}
+        title={t("projects.title")}
+        description={t("projects.description")}
       />
 
       <div className="my-projects__grid">
@@ -34,7 +37,7 @@ export default function MyProjects() {
               {project.image ? (
                 <img
                   src={project.image}
-                  alt={project.imageAlt || `${project.name} preview`}
+                  alt={t(`projects.${projectKeys[project.name]}.imageAlt`) || t("projects.preview", { name: project.name })}
                 />
               ) : (
                 <span className="my-projects__preview-icon" aria-hidden="true">
@@ -44,7 +47,7 @@ export default function MyProjects() {
             </div>
 
             <h3 className="my-projects__name">{project.name}</h3>
-            <p className="my-projects__description">{project.description}</p>
+            <p className="my-projects__description">{t(`projects.${projectKeys[project.name]}.description`)}</p>
 
             {project.technologies?.length > 0 && (
               <ul className="my-projects__tech">
@@ -59,7 +62,7 @@ export default function MyProjects() {
             <div className="my-projects__actions">
               {project.liveUrl && (
                 <Button href={project.liveUrl} variant="primary" icon={ExternalLink}>
-                  Live Demo
+                  {t("common.liveDemo")}
                 </Button>
               )}
               {project.video && (
@@ -70,12 +73,12 @@ export default function MyProjects() {
                   variant="primary"
                   icon={Play}
                 >
-                  Video Demo
+                  {t("common.videoDemo")}
                 </Button>
               )}
               {project.githubUrl && (
                 <Button href={project.githubUrl} variant="secondary" icon={SiGithub}>
-                  GitHub
+                  {t("common.github")}
                 </Button>
               )}
             </div>

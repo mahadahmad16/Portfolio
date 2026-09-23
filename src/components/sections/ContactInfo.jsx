@@ -2,6 +2,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import GlowCard from "../common/GlowCard";
 import { CONTACT_INFO } from "../../data/contactInfo";
 import { SOCIAL_LINKS } from "../../data/socialLinks";
+import { useLanguage } from "../../context/LanguageContext";
 import "./ContactInfo.css";
 
 function GitHubIcon({ size = 16 }) {
@@ -68,6 +69,7 @@ const SOCIAL_ICONS = {
  * src/data/contactInfo.js and src/data/socialLinks.js.
  */
 export default function ContactInfo() {
+  const { t } = useLanguage();
   return (
     <GlowCard as="section" className="contact-info">
       <ul className="contact-info__list">
@@ -79,7 +81,7 @@ export default function ContactInfo() {
                 <Icon size={18} strokeWidth={1.75} />
               </span>
               <div>
-                <p className="contact-info__label">{label}</p>
+                <p className="contact-info__label">{t(`contact.${label.toLowerCase()}`)}</p>
                 {href ? (
                   <a href={href} className="contact-info__value">
                     {value}
@@ -94,7 +96,7 @@ export default function ContactInfo() {
       </ul>
 
       <div className="contact-info__socials">
-        <p className="contact-info__label">Elsewhere</p>
+        <p className="contact-info__label">{t("contact.elsewhere")}</p>
         <ul className="contact-info__social-list">
           {SOCIAL_LINKS.map(({ label, href }) => {
             const Icon = SOCIAL_ICONS[label];

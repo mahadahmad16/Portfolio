@@ -17,7 +17,7 @@ import atelierFragnance from "../assets/Landing Pages/AtelierFragrances.jpg";
 import digitalAgency from "../assets/Landing Pages/DigitalAgency.jpg";
 import restaurantLanding from "../assets/Landing Pages/Restaurant.jpg";
 import digitalDashboard from "../assets/Landing Pages/CurrencyDashboard.png";
-import travelAgencyCover from "../assets/TravelAgency/..png";
+import travelAgencyCover from "../assets/TravelAgency/travel-agency-cover.png";
 import travelAgencyScreen1 from "../assets/TravelAgency/.-1.png";
 import travelAgencyScreen2 from "../assets/TravelAgency/.-2.png";
 import coffeeShopCover1 from "../assets/CoffeeShop/OnBoarding_01.png";
@@ -92,7 +92,6 @@ export const DESIGN_PROJECTS = [
     screenshots: [
       { id: "coffee-shop-2", title: "Coffee Shop Onboarding 2", image: coffeeShopCover2 },
       { id: "coffee-shop-3", title: "Coffee Shop Onboarding 3", image: coffeeShopCover3 },
-      { id: "coffee-shop-home", title: "Coffee Shop Home", image: coffeShopHome },
       { id: "coffee-shop-home", title: "Coffee Shop Home", image: coffeShopHome },
     ],
   }

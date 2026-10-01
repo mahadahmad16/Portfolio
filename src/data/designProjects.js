@@ -134,7 +134,6 @@ export const DESIGN_PROJECTS = [
       { id: "jazzcash-11", title: "Jazzcash Redesign 11", image: jazz11 },
       { id: "jazzcash-12", title: "Jazzcash Redesign 12", image: jazz12 },
       { id: "jazzcash-13", title: "Jazzcash Redesign 13", image: jazz13 },
-      { id: "jazzcash-14", title: "Jazzcash Redesign 14", image: jazz14 },
     ],
   }
 ];

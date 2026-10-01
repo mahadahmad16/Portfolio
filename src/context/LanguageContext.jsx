@@ -28,7 +28,7 @@ const translations = {
       ],
     },
     projects: {
-      eyebrow: "Work", title: "My Projects", description: "A few things I've built recently.", preview: "{{name}} preview",
+      eyebrow: "Work", title: "My Projects", description: "A few things I've built recently.", preview: "{{name}} preview", developmentTitle: "Development Projects", designingTitle: "Designing Projects", viewDesign: "View {{name}} design", viewScreen: "View {{name}} screen",
       quickbite: { description: "A Food Delivery Dashboard where users can browse restaurants, view menus, manage their cart, and place orders.", imageAlt: "Restaurant table with plated food" },
       fitmember: { description: "A frontend website for a gym reception where staff can register users and easily manage their subscriptions.", imageAlt: "Modern gym with fitness equipment" },
       alDhawAlWahaj: { description: "A website where users can easily explore different fan companies and their products and discover available fan products.", imageAlt: "Industrial fan and ventilation equipment" },

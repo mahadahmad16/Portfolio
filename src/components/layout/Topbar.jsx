@@ -25,7 +25,7 @@ export default function Topbar({ isSidebarOpen, onToggleSidebar }) {
 
       <div className="topbar__actions">
         <ThemeSwitcher />
-        <LanguageSwitcher />
+        {/* <LanguageSwitcher /> */}
 
         <button
           type="button"

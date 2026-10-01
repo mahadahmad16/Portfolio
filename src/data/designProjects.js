@@ -25,6 +25,21 @@ import coffeeShopCover1 from "../assets/CoffeeShop/OnBoarding_01.png";
 import coffeeShopCover2 from "../assets/CoffeeShop/OnBoarding_02.png";
 import coffeeShopCover3 from "../assets/CoffeeShop/OnBoarding_03.png";
 import coffeShopHome from "../assets/CoffeeShop/Home_01.png";
+import jazz from "../assets/Redesigns/Jazzcash/Section.png";
+import jazz1 from "../assets/Redesigns/Jazzcash/Section-1.png";
+import jazz2 from "../assets/Redesigns/Jazzcash/Section-2.png";
+import jazz3 from "../assets/Redesigns/Jazzcash/Section-3.png";
+import jazz4 from "../assets/Redesigns/Jazzcash/Section-4.png";
+import jazz5 from "../assets/Redesigns/Jazzcash/Section-5.png";
+import jazz6 from "../assets/Redesigns/Jazzcash/Section-6.png";
+import jazz7 from "../assets/Redesigns/Jazzcash/Section-7.png";
+import jazz8 from "../assets/Redesigns/Jazzcash/Section-8.png";
+import jazz9 from "../assets/Redesigns/Jazzcash/Section-9.png";
+import jazz10 from "../assets/Redesigns/Jazzcash/Section-10.png";
+import jazz11 from "../assets/Redesigns/Jazzcash/Section-11.png";
+import jazz12 from "../assets/Redesigns/Jazzcash/Section-12.png";
+import jazz13 from "../assets/Redesigns/Jazzcash/Section-13.png";
+import jazz14 from "../assets/Redesigns/Jazzcash/Section-14.png";
 
 export const DESIGN_PROJECTS = [
   {
@@ -95,6 +110,31 @@ export const DESIGN_PROJECTS = [
       { id: "coffee-shop-2", title: "Coffee Shop Onboarding 2", image: coffeeShopCover2 },
       { id: "coffee-shop-3", title: "Coffee Shop Onboarding 3", image: coffeeShopCover3 },
       { id: "coffee-shop-home", title: "Coffee Shop Home", image: coffeShopHome },
+    ],
+  },
+  {
+    id: "Jazzcash-Redesign",
+    name: "Jazzcash Redesign",
+    description:
+      "A redesigned version of the Jazzcash app, focusing on improving user experience and visual appeal.",
+    tools: ["Figma", "UI/UX Design", "App Design"],
+    cover: jazz,
+    coverAlt: "Jazzcash redesign landing page design",
+    screenshots: [
+      { id: "jazzcash-1", title: "Jazzcash Redesign 1", image: jazz1 },
+      { id: "jazzcash-2", title: "Jazzcash Redesign 2", image: jazz2 },
+      { id: "jazzcash-3", title: "Jazzcash Redesign 3", image: jazz3 },
+      { id: "jazzcash-4", title: "Jazzcash Redesign 4", image: jazz4 },
+      { id: "jazzcash-5", title: "Jazzcash Redesign 5", image: jazz5 },
+      { id: "jazzcash-6", title: "Jazzcash Redesign 6", image: jazz6 },
+      { id: "jazzcash-7", title: "Jazzcash Redesign 7", image: jazz7 },
+      { id: "jazzcash-8", title: "Jazzcash Redesign 8", image: jazz8 },
+      { id: "jazzcash-9", title: "Jazzcash Redesign 9", image: jazz9 },
+      { id: "jazzcash-10", title: "Jazzcash Redesign 10", image: jazz10 },
+      { id: "jazzcash-11", title: "Jazzcash Redesign 11", image: jazz11 },
+      { id: "jazzcash-12", title: "Jazzcash Redesign 12", image: jazz12 },
+      { id: "jazzcash-13", title: "Jazzcash Redesign 13", image: jazz13 },
+      { id: "jazzcash-14", title: "Jazzcash Redesign 14", image: jazz14 },
     ],
   }
 ];

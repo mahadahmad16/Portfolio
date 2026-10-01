@@ -236,6 +236,7 @@
 
 .my-projects__lightbox-close {
   position: absolute;
+  z-index: 1;
   top: 1rem;
   right: 1rem;
   display: grid;
@@ -245,8 +246,9 @@
   padding: 0;
   border: 1px solid var(--border-hairline);
   border-radius: 50%;
-  background: var(--bg-panel-glass);
+  background: var(--bg-panel);
   color: var(--text-primary);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
   cursor: pointer;
 }
 

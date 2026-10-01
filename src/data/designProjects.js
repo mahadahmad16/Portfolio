@@ -47,7 +47,7 @@ export const DESIGN_PROJECTS = [
     name: "Life OS",
     description:
       "A mobile productivity app concept for managing tasks, habits, goals, and daily schedules in one focused workspace.",
-    tools: ["Figma", "UI/UX Design", "Mobile App"],
+    tools: ["Figma", "UI/UX Design", "App Design"],
     cover: splashScreen,
     coverAlt: "Life OS splash screen design",
     screenshots: [
@@ -73,7 +73,7 @@ export const DESIGN_PROJECTS = [
     name: "Landing Pages",
     description:
       "A collection of landing page designs created for various projects, showcasing different styles and layouts.",
-    tools: ["Figma", "UI/UX Design", "Web Design"],
+    tools: ["Figma", "UI/UX Design", "Web Design", "App Design"],
     cover: atelierFragnance,
     coverAlt: "Atelier Fragnance landing page design",
     screenshots: [
@@ -103,7 +103,7 @@ export const DESIGN_PROJECTS = [
     name: "Coffee Shop",
     description:
       "A coffee shop app design concept, providing a seamless and visually appealing experience for coffee enthusiasts.",
-    tools: ["Figma", "UI/UX Design", "Mobile App"],
+    tools: ["Figma", "UI/UX Design", "App Design"],
     cover: coffeeShopCover1,
     coverAlt: "Coffee Shop app design",
     screenshots: [

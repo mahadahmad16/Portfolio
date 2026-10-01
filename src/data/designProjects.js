@@ -93,6 +93,7 @@ export const DESIGN_PROJECTS = [
       { id: "coffee-shop-2", title: "Coffee Shop Onboarding 2", image: coffeeShopCover2 },
       { id: "coffee-shop-3", title: "Coffee Shop Onboarding 3", image: coffeeShopCover3 },
       { id: "coffee-shop-home", title: "Coffee Shop Home", image: coffeShopHome },
+      { id: "coffee-shop-home", title: "Coffee Shop Home", image: coffeShopHome },
     ],
   }
 ];

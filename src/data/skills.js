@@ -2,18 +2,18 @@
 export const SKILL_CATEGORIES = [
   {
     category: "Frontend",
-    items: ["React", "HTML", "CSS", "Tailwind CSS", "Bootstrap"],
+    items: ["React", "JavaScript", "Tailwind & Bootstrap"],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express"],
+    items: ["Node.js", "Express", "PHP"],
   },
   {
     category: "Database",
-    items: ["MongoDB"],
+    items: ["MongoDB", "MySQL"],
   },
   {
     category: "Tools",
-    items: ["Git", "GitHub", "Figma", "VS Code", "Canva"],
+    items: ["Git", "GitHub", "phpMyAdmin", "Figma", "Canva"],
   },
 ];

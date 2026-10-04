@@ -6,7 +6,6 @@ import AboutMe from "./pages/AboutMe";
 import Qualifications from "./pages/Qualifications";
 import MySkills from "./pages/MySkills";
 import Contact from "./pages/Contact";
-import Resume from "./pages/Resume";
 import Certificates from "./pages/Certificates";
 import Projects from "./pages/MyProjects";
 import Games from "./pages/Games";
@@ -41,7 +40,6 @@ export default function App() {
           <Route path="qualifications" element={<Qualifications />} />
           <Route path="skills" element={<MySkills />} />
           <Route path="contact" element={<Contact/>} />
-          <Route path="resume" element={<Resume />} />
           <Route
             path="certificates"
             element={<Certificates />}

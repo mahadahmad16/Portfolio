@@ -1,4 +1,4 @@
-import { FolderGit2, Mail, Download } from "lucide-react";
+import { FolderGit2, Mail, Eye } from "lucide-react";
 import resumePdf from "../../assets/Resume-Mahad-Ahmad.pdf";
 import Button from "../common/Button";
 import TypingText from "../common/TypingText";
@@ -32,11 +32,12 @@ export default function Hero() {
         </Button>
         <Button
           href={resumePdf}
-          download="Resume-Mahad Ahmad.pdf"
+          target="_blank"
+          rel="noreferrer"
           variant="secondary"
-          icon={Download}
+          icon={Eye}
         >
-          {t("common.downloadResume")}
+          {t("common.viewResume")}
         </Button>
       </div>
     </section>

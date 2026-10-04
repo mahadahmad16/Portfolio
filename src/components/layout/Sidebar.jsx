@@ -5,7 +5,6 @@ import {
   GraduationCap,
   Layers,
   Mail,
-  FileText,
   Award,
   FolderGit2,
   Gamepad2,
@@ -20,7 +19,6 @@ const NAV_LINKS = [
   { labelKey: "nav.qualifications", to: "/qualifications", icon: GraduationCap },
   { labelKey: "nav.skills", to: "/skills", icon: Layers },
   { labelKey: "nav.contact", to: "/contact", icon: Mail },
-  { labelKey: "nav.resume", to: "/resume", icon: FileText },
   { labelKey: "nav.certificates", to: "/certificates", icon: Award },
   { labelKey: "nav.projects", to: "/projects", icon: FolderGit2 },
 ];

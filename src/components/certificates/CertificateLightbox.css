@@ -43,7 +43,7 @@
   border-radius: 50%;
   background: rgba(6, 9, 17, 0.82);
   color: var(--text-primary);
-  cursor: pointer;
+  cursor: url("/cursor.svg") 5 3, auto;
   transition: color 0.2s var(--ease-out), border-color 0.2s var(--ease-out),
     box-shadow 0.2s var(--ease-out);
 }

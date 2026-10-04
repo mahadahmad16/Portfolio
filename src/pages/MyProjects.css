@@ -120,7 +120,7 @@
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-sm);
   background: var(--bg-panel);
-  cursor: zoom-in;
+  cursor: url("/cursor.svg") 5 3, auto;
 }
 
 .my-projects__design-cover img {
@@ -196,7 +196,7 @@
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-sm);
   background: var(--bg-panel);
-  cursor: zoom-in;
+  cursor: url("/cursor.svg") 5 3, auto;
 }
 
 .my-projects__design-screen img {
@@ -249,7 +249,7 @@
   background: var(--bg-panel);
   color: var(--text-primary);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
-  cursor: pointer;
+  cursor: url("/cursor.svg") 5 3, auto;
 }
 
 .my-projects__lightbox-close:hover {

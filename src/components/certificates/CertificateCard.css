@@ -31,7 +31,7 @@
   padding: 0;
   border: 0;
   background: transparent;
-  cursor: zoom-in;
+  cursor: url("/cursor.svg") 5 3, auto;
 }
 
 .certificate-card__preview-button::after {

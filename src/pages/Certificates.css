@@ -24,7 +24,7 @@
   border-radius: var(--radius-sm);
   overflow: hidden;
   background: rgba(255, 255, 255, 0.03);
-  cursor: pointer;
+  cursor: url("/cursor.svg") 5 3, auto;
 }
 
 .certificates__thumb img {
@@ -95,7 +95,7 @@
   color: var(--text-primary);
   font-size: 1.5rem;
   line-height: 1;
-  cursor: pointer;
+  cursor: url("/cursor.svg") 5 3, auto;
 }
 
 .certificates__lightbox-close:hover {

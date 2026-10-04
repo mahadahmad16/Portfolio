@@ -81,7 +81,7 @@
   border: 1px solid var(--border-hairline);
   background: color-mix(in srgb, var(--accent-blue) 8%, transparent);
   color: var(--text-primary);
-  cursor: pointer;
+  cursor: url("/cursor.svg") 5 3, auto;
   transition: border-color 0.2s var(--ease-out), background 0.2s var(--ease-out);
 }
 

@@ -23,6 +23,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  html,
+  html *,
+  html *::before,
+  html *::after {
+    cursor: url("/cursor.svg") 5 3, none !important;
+  }
+}
+
 html[lang="ur"] body {
   font-family: "Noto Nastaliq Urdu", serif;
   line-height: 1.9;

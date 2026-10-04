@@ -106,7 +106,7 @@
   border: 1px solid var(--border-hairline);
   background: rgba(255, 255, 255, 0.03);
   font-size: 1.6rem;
-  cursor: pointer;
+  cursor: url("/cursor.svg") 5 3, auto;
   transition: border-color 0.2s var(--ease-out), background 0.2s var(--ease-out),
     transform 0.2s var(--ease-out);
 }
@@ -124,7 +124,7 @@
 }
 
 .rps__choice-btn:disabled {
-  cursor: default;
+  cursor: url("/cursor.svg") 5 3, auto;
   opacity: 0.6;
 }
 

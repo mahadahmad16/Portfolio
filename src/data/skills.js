@@ -2,7 +2,7 @@
 export const SKILL_CATEGORIES = [
   {
     category: "Frontend",
-    items: ["React", "JavaScript", "Tailwind & Bootstrap"],
+    items: ["React", "JavaScript", "TypeScript", "Tailwind & Bootstrap"],
   },
   {
     category: "Backend",

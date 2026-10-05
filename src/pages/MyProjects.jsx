@@ -21,7 +21,13 @@ export default function MyProjects() {
   const { t } = useLanguage();
   const [activeScreenshot, setActiveScreenshot] = useState(null);
   const [screenshotZoom, setScreenshotZoom] = useState(1);
-  const projectKeys = { QuickBite: "quickbite", FitMember: "fitmember", "Al-Dhaw-Al-Wahaj": "alDhawAlWahaj", CodeSync: "codesync" };
+  const projectKeys = {
+    QuickBite: "quickbite",
+    FitMember: "fitmember",
+    "Al-Dhaw-Al-Wahaj": "alDhawAlWahaj",
+    CodeSync: "codesync",
+    TaskFlow: "taskflow",
+  };
 
   const openScreenshot = (screenshot) => {
     setScreenshotZoom(1);

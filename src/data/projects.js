@@ -39,7 +39,7 @@ export const PROJECTS = [
     imageAlt: "Industrial fan and ventilation equipment",
     description:
       "A website where users can easily explore different fan companies and their products and discover available fan products.",
-    technologies: ["HTML", "CSS", "JavaScript", "Git & GitHub"],
+    technologies: ["HTML", "CSS", "JavaScript", "Local Storage", "Git & GitHub"],
     githubUrl: "https://github.com/mahadahmad16/aldhawalwahaj.git",
     liveUrl: "https://aldhawalwahaj.vercel.app/",
   },
@@ -59,5 +59,21 @@ export const PROJECTS = [
     ],
     githubUrl: "https://github.com/mahadahmad16/collaborative-code-editor.git",
     video: CodeSyncVideo,
+  },
+  {
+    name: "TaskFlow",
+    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=85",
+    imageAlt: "Person writing tasks on a notepad",
+    description:
+      "A task management application that allows users to create, organize, and track their tasks efficiently.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Redux",
+      "Local Storage",
+      "Git & GitHub",
+    ],
+    githubUrl: "https://github.com/mahadahmad16/Task-Flow.git",
+    liveUrl: "https://task-flow-2005.vercel.app/",
   }
 ];

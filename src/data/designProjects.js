@@ -18,6 +18,7 @@ import digitalAgency from "../assets/Landing Pages/DigitalAgency.jpg";
 import restaurantLanding from "../assets/Landing Pages/Restaurant.jpg";
 import digitalDashboard from "../assets/Landing Pages/CurrencyDashboard.png";
 import giftUni from "../assets/Landing Pages/GiftUni.png";
+import wanderly from "../assets/Landing Pages/Wanderly - Landing Page.png";
 import travelAgencyCover from "../assets/TravelAgency/travel-agency-cover.png";
 import travelAgencyScreen1 from "../assets/TravelAgency/.-1.png";
 import travelAgencyScreen2 from "../assets/TravelAgency/.-2.png";
@@ -81,6 +82,7 @@ export const DESIGN_PROJECTS = [
       { id: "restaurant-landing", title: "Restaurant", image: restaurantLanding },
       { id: "digital-dashboard", title: "Digital Dashboard", image: digitalDashboard },
       { id: "gift-uni", title: "Gift Uni", image: giftUni },
+      { id: "wanderly", title: "Wanderly", image: wanderly },
     ],
   },
 

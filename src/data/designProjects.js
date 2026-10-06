@@ -19,6 +19,7 @@ import restaurantLanding from "../assets/Landing Pages/Restaurant.jpg";
 import digitalDashboard from "../assets/Landing Pages/CurrencyDashboard.png";
 import giftUni from "../assets/Landing Pages/GiftUni.png";
 import wanderly from "../assets/Landing Pages/Wanderly - Landing Page.png";
+import dashboard from "../assets/Landing Pages/Dashboard.png";
 import travelAgencyCover from "../assets/TravelAgency/travel-agency-cover.png";
 import travelAgencyScreen1 from "../assets/TravelAgency/.-1.png";
 import travelAgencyScreen2 from "../assets/TravelAgency/.-2.png";
@@ -71,9 +72,9 @@ export const DESIGN_PROJECTS = [
   },
   {
     id: "LandingPages",
-    name: "Landing Pages",
+    name: "Landing Pages & Dashboards",
     description:
-      "A collection of landing page designs created for various projects, showcasing different styles and layouts.",
+      "A collection of landing page & dashboard designs created for various projects, showcasing different styles and layouts.",
     tools: ["Figma", "UI/UX Design", "Web Design", "App Design"],
     cover: atelierFragnance,
     coverAlt: "Atelier Fragnance landing page design",
@@ -83,6 +84,7 @@ export const DESIGN_PROJECTS = [
       { id: "digital-dashboard", title: "Digital Dashboard", image: digitalDashboard },
       { id: "gift-uni", title: "Gift Uni", image: giftUni },
       { id: "wanderly", title: "Wanderly", image: wanderly },
+      { id: "dashboard", title: "Dashboard", image: dashboard },
     ],
   },
 

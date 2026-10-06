@@ -1,8 +1,4 @@
-/**
- * Consumed by components/sections/ExperienceCard.jsx — map over this if
- * a second role is ever added; for now it's the same single entry
- * ExperienceCard already defaults to.
- */
+/** Experience entries displayed in the Qualifications section. */
 export const EXPERIENCE = [
   {
     role: "Frontend Developer Intern",

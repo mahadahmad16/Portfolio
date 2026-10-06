@@ -11,22 +11,21 @@ import {
   ChevronDown,
 } from "lucide-react";
 import "./Sidebar.css";
-import { useLanguage } from "../../context/LanguageContext";
 
 // TODO: move these into src/data/navLinks.js once it exists
 const NAV_LINKS = [
-  { labelKey: "nav.about", to: "/", icon: User },
-  { labelKey: "nav.qualifications", to: "/qualifications", icon: GraduationCap },
-  { labelKey: "nav.skills", to: "/skills", icon: Layers },
-  { labelKey: "nav.contact", to: "/contact", icon: Mail },
-  { labelKey: "nav.certificates", to: "/certificates", icon: Award },
-  { labelKey: "nav.projects", to: "/projects", icon: FolderGit2 },
+  { label: "About Me", to: "/", icon: User },
+  { label: "Qualifications", to: "/qualifications", icon: GraduationCap },
+  { label: "My Skills", to: "/skills", icon: Layers },
+  { label: "Contact", to: "/contact", icon: Mail },
+  { label: "Certificates", to: "/certificates", icon: Award },
+  { label: "My Projects", to: "/projects", icon: FolderGit2 },
 ];
 
 const GAMES = [
-  { labelKey: "nav.snake", to: "/games/snake" },
-  { labelKey: "nav.ticTacToe", to: "/games/tic-tac-toe" },
-  { labelKey: "nav.rockPaperScissors", to: "/games/rock-paper-scissors" },
+  { label: "Snake Game", to: "/games/snake" },
+  { label: "Tic-Tac-Toe", to: "/games/tic-tac-toe" },
+  { label: "Rock-Paper-Scissors", to: "/games/rock-paper-scissors" },
 ];
 
 /**
@@ -35,7 +34,6 @@ const GAMES = [
  * every link click so navigating on mobile tucks the drawer back away.
  */
 export default function Sidebar({ isOpen, onClose }) {
-  const { t } = useLanguage();
   const location = useLocation();
   const [gamesOpen, setGamesOpen] = useState(
     location.pathname.startsWith("/games")
@@ -53,7 +51,7 @@ export default function Sidebar({ isOpen, onClose }) {
         aria-label="Primary"
       >
         <ul className="sidebar__list">
-          {NAV_LINKS.map(({ labelKey, to, icon: Icon }) => (
+          {NAV_LINKS.map(({ label, to, icon: Icon }) => (
             <li key={to}>
               <NavLink
                 to={to}
@@ -64,7 +62,7 @@ export default function Sidebar({ isOpen, onClose }) {
                 }
               >
                 <Icon size={18} strokeWidth={1.75} aria-hidden="true" />
-                <span>{t(labelKey)}</span>
+                <span>{label}</span>
               </NavLink>
             </li>
           ))}
@@ -78,7 +76,7 @@ export default function Sidebar({ isOpen, onClose }) {
               aria-controls="sidebar-games-list"
             >
               <Gamepad2 size={18} strokeWidth={1.75} aria-hidden="true" />
-              <span>{t("nav.games")}</span>
+              <span>Games</span>
               <ChevronDown
                 size={16}
                 className={`sidebar__chevron ${
@@ -94,7 +92,7 @@ export default function Sidebar({ isOpen, onClose }) {
                 gamesOpen ? "sidebar__sublist--open" : ""
               }`}
             >
-              {GAMES.map(({ labelKey, to }) => (
+              {GAMES.map(({ label, to }) => (
                 <li key={to}>
                   <NavLink
                     to={to}
@@ -105,7 +103,7 @@ export default function Sidebar({ isOpen, onClose }) {
                       }`
                     }
                   >
-                    {t(labelKey)}
+                    {label}
                   </NavLink>
                 </li>
               ))}

@@ -3,7 +3,6 @@ import { createPortal } from "react-dom";
 import SectionHeading from "../components/common/SectionHeading";
 import GlowCard from "../components/common/GlowCard";
 import { CERTIFICATES } from "../data/certificates";
-import { useLanguage } from "../context/LanguageContext";
 import "./Certificates.css";
 
 /**
@@ -13,7 +12,6 @@ import "./Certificates.css";
  * CertificateCard/CertificateLightbox if you'd rather use those.
  */
 export default function Certificates() {
-  const { t } = useLanguage();
   const [activeCertificate, setActiveCertificate] = useState(null);
 
   useEffect(() => {
@@ -27,9 +25,9 @@ export default function Certificates() {
   return (
     <div className="certificates">
       <SectionHeading
-        eyebrow={t("certificates.eyebrow")}
-        title={t("certificates.title")}
-        description={t("certificates.description")}
+        eyebrow="Recognition"
+        title="Certificates"
+        description="Certifications and project recognitions I've earned so far."
       />
 
       <div className="certificates__grid">
@@ -44,7 +42,7 @@ export default function Certificates() {
               type="button"
               className="certificates__thumb"
               onClick={() => setActiveCertificate(certificate)}
-              aria-label={t("certificates.viewImage", { title: certificate.title })}
+              aria-label={`View larger image of ${certificate.title}`}
             >
               <img src={certificate.image} alt={certificate.title} />
             </button>
@@ -70,7 +68,7 @@ export default function Certificates() {
               type="button"
               className="certificates__lightbox-close"
               onClick={() => setActiveCertificate(null)}
-              aria-label={t("common.close")}
+              aria-label="Close certificate preview"
             >
               ×
             </button>

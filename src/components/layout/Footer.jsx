@@ -1,5 +1,4 @@
 import { Mail } from "lucide-react";
-import { useLanguage } from "../../context/LanguageContext";
 import "./Footer.css";
 
 function LinkedInIcon({ size = 18 }) {
@@ -67,11 +66,10 @@ const SOCIALS = [
 ];
 
 export default function Footer() {
-  const { t } = useLanguage();
   return (
     <footer className="site-footer">
       <p className="site-footer__text">
-        {t("footer.copyright", { year: new Date().getFullYear() })}
+        © {new Date().getFullYear()} Mahad Ahmad. Built with React.
       </p>
 
       <ul className="site-footer__socials">

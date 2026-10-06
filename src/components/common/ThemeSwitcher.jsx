@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Palette } from "lucide-react";
 import useTheme from "../../hooks/useTheme";
-import { useLanguage } from "../../context/LanguageContext";
 import "./ThemeSwitcher.css";
 
 /**
@@ -11,7 +10,6 @@ import "./ThemeSwitcher.css";
  */
 export default function ThemeSwitcher() {
   const { theme, setTheme, themes } = useTheme();
-  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const wrapperRef = useRef(null);
 
@@ -45,7 +43,7 @@ export default function ThemeSwitcher() {
         onClick={() => setIsOpen((open) => !open)}
         aria-haspopup="true"
         aria-expanded={isOpen}
-        aria-label={t("common.themeSwitch")}
+        aria-label="Choose color theme"
       >
         <span
           className="theme-switcher__trigger-swatch"

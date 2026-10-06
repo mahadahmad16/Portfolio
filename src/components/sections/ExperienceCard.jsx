@@ -2,10 +2,7 @@ import { Briefcase } from "lucide-react";
 import GlowCard from "../common/GlowCard";
 import "./ExperienceCard.css";
 
-/**
- * Single experience entry — currently just the Web Era Solutions PK
- * internship, but takes props so more roles can be added later.
- */
+/** Displays one experience entry in the Qualifications section. */
 export default function ExperienceCard({
   role = "Frontend Developer Intern",
   company = "Web Era Solutions PK",

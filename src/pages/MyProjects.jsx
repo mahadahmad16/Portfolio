@@ -7,7 +7,6 @@ import GlowCard from "../components/common/GlowCard";
 import Button from "../components/common/Button";
 import { PROJECTS } from "../data/projects";
 import { DESIGN_PROJECTS } from "../data/designProjects";
-import { useLanguage } from "../context/LanguageContext";
 import "./MyProjects.css";
 
 /**
@@ -18,16 +17,8 @@ import "./MyProjects.css";
  * either way.
  */
 export default function MyProjects() {
-  const { t } = useLanguage();
   const [activeScreenshot, setActiveScreenshot] = useState(null);
   const [screenshotZoom, setScreenshotZoom] = useState(1);
-  const projectKeys = {
-    QuickBite: "quickbite",
-    FitMember: "fitmember",
-    "Al-Dhaw-Al-Wahaj": "alDhawAlWahaj",
-    CodeSync: "codesync",
-    TaskFlow: "taskflow",
-  };
 
   const openScreenshot = (screenshot) => {
     setScreenshotZoom(1);
@@ -48,14 +39,14 @@ export default function MyProjects() {
   return (
     <div className="my-projects">
       <SectionHeading
-        eyebrow={t("projects.eyebrow")}
-        title={t("projects.title")}
-        description={t("projects.description")}
+        eyebrow="Work"
+        title="My Projects"
+        description="A few things I've built recently."
       />
 
       <section className="my-projects__category" aria-labelledby="development-projects">
         <h2 id="development-projects" className="my-projects__category-title">
-          {t("projects.developmentTitle")}
+          Development Projects
         </h2>
 
         <div className="my-projects__grid">
@@ -70,7 +61,7 @@ export default function MyProjects() {
               {project.image ? (
                 <img
                   src={project.image}
-                  alt={t(`projects.${projectKeys[project.name]}.imageAlt`) || t("projects.preview", { name: project.name })}
+                  alt={project.imageAlt || `${project.name} preview`}
                 />
               ) : (
                 <span className="my-projects__preview-icon" aria-hidden="true">
@@ -80,7 +71,7 @@ export default function MyProjects() {
             </div>
 
             <h3 className="my-projects__name">{project.name}</h3>
-            <p className="my-projects__description">{t(`projects.${projectKeys[project.name]}.description`)}</p>
+            <p className="my-projects__description">{project.description}</p>
 
             {project.technologies?.length > 0 && (
               <ul className="my-projects__tech">
@@ -95,7 +86,7 @@ export default function MyProjects() {
             <div className="my-projects__actions">
               {project.liveUrl && (
                 <Button href={project.liveUrl} variant="primary" icon={ExternalLink}>
-                  {t("common.liveDemo")}
+                  Live Demo
                 </Button>
               )}
               {project.video && (
@@ -106,12 +97,12 @@ export default function MyProjects() {
                   variant="primary"
                   icon={Play}
                 >
-                  {t("common.videoDemo")}
+                  Video Demo
                 </Button>
               )}
               {project.githubUrl && (
                 <Button href={project.githubUrl} variant="secondary" icon={SiGithub}>
-                  {t("common.github")}
+                  GitHub
                 </Button>
               )}
             </div>
@@ -122,7 +113,7 @@ export default function MyProjects() {
 
       <section className="my-projects__category" aria-labelledby="designing-projects">
         <h2 id="designing-projects" className="my-projects__category-title">
-          {t("projects.designingTitle")}
+          Designing Projects
         </h2>
 
         {DESIGN_PROJECTS.map((project) => (
@@ -138,10 +129,10 @@ export default function MyProjects() {
                   }),
                   projectName: project.name,
                 })}
-                aria-label={t("projects.viewDesign", { name: project.name })}
+                aria-label={`View ${project.name} design`}
               >
                 <img src={project.cover} alt={project.coverAlt} />
-                <span>{t("projects.viewDesign", { name: project.name })}</span>
+                <span>View {project.name} design</span>
               </button>
 
               <div>
@@ -162,7 +153,7 @@ export default function MyProjects() {
                   className="my-projects__design-screen"
                   key={screen.id}
                   onClick={() => openScreenshot({ ...screen, projectName: project.name })}
-                  aria-label={t("projects.viewScreen", { name: screen.title })}
+                  aria-label={`View ${screen.title} screen`}
                 >
                   <img src={screen.image} alt={`${project.name}: ${screen.title}`} loading="lazy" />
                 </button>
@@ -192,7 +183,7 @@ export default function MyProjects() {
               type="button"
               className="my-projects__lightbox-close"
               onClick={() => setActiveScreenshot(null)}
-              aria-label={t("common.close")}
+              aria-label="Close"
             >
               <X size={20} aria-hidden="true" />
             </button>

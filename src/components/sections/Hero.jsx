@@ -2,7 +2,6 @@ import { FolderGit2, Mail, Eye } from "lucide-react";
 import resumePdf from "../../assets/Resume-Mahad-Ahmad.pdf";
 import Button from "../common/Button";
 import TypingText from "../common/TypingText";
-import { useLanguage } from "../../context/LanguageContext";
 import "./Hero.css";
 
 /**
@@ -10,25 +9,24 @@ import "./Hero.css";
  * tagline, and the three primary CTAs from the brief.
  */
 export default function Hero() {
-  const { t } = useLanguage();
   return (
     <section className="hero">
       <h1 className="hero__name">Mahad Ahmad</h1>
 
       <p className="hero__role">
-        <TypingText words={t("hero.roles")} />
+        <TypingText words={["MERN Stack Developer", "UI/UX Designer"]} />
       </p>
 
       <p className="hero__tagline">
-        {t("hero.tagline")}
+        I build modern web applications and intuitive digital experiences.
       </p>
 
       <div className="hero__actions">
         <Button to="/projects" variant="primary" icon={FolderGit2}>
-          {t("hero.viewWork")}
+          View My Work
         </Button>
         <Button to="/contact" variant="secondary" icon={Mail}>
-          {t("hero.contactMe")}
+          Contact Me
         </Button>
         <Button
           href={resumePdf}
@@ -37,7 +35,7 @@ export default function Hero() {
           variant="secondary"
           icon={Eye}
         >
-          {t("common.viewResume")}
+          View Resume
         </Button>
       </div>
     </section>

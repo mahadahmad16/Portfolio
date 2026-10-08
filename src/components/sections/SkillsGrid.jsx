@@ -14,23 +14,23 @@ export default function SkillsGrid() {
         <GlowCard as="article" key={category} className="skills-grid__card">
           <h3 className="skills-grid__category">{category}</h3>
           <ul className="skills-grid__list">
-            {items.map(({ name, proficiency }) => (
+            {items.map(({ name, rating }) => (
               <li key={name} className="skills-grid__item">
                 <div className="skills-grid__item-heading">
                   <span className="skills-grid__name">{name}</span>
-                  <span className="skills-grid__proficiency">{proficiency}%</span>
+                  <span className="skills-grid__proficiency">{rating}/10</span>
                 </div>
                 <div
                   className="skills-grid__progress"
                   role="progressbar"
-                  aria-label={`${name} proficiency`}
+                  aria-label={`${name} rating`}
                   aria-valuemin={0}
-                  aria-valuemax={100}
-                  aria-valuenow={proficiency}
+                  aria-valuemax={10}
+                  aria-valuenow={rating}
                 >
                   <span
                     className="skills-grid__progress-fill"
-                    style={{ width: `${proficiency}%` }}
+                    style={{ width: `${rating * 10}%` }}
                   />
                 </div>
               </li>

@@ -1,37 +1,37 @@
-/** Proficiency values are editable percentages consumed by SkillsGrid.jsx. */
+/** Editable skill ratings out of 10 consumed by SkillsGrid.jsx. */
 export const SKILL_CATEGORIES = [
   {
     category: "Frontend",
     items: [
-      { name: "React", proficiency: 85 },
-      { name: "JavaScript", proficiency: 90 },
-      { name: "TypeScript", proficiency: 80 },
-      { name: "Tailwind & Bootstrap", proficiency: 85 },
+      { name: "React", rating: 8 },
+      { name: "JavaScript", rating: 8.5 },
+      { name: "TypeScript", rating: 7 },
+      { name: "Tailwind & Bootstrap", rating: 7.5 },
     ],
   },
   {
     category: "Backend",
     items: [
-      { name: "Node.js", proficiency: 75 },
-      { name: "Express.js", proficiency: 75 },
-      { name: "PHP", proficiency: 70 },
+      { name: "Node.js", rating: 7.5 },
+      { name: "Express.js", rating: 7 },
+      { name: "PHP", rating: 7 },
     ],
   },
   {
     category: "Database",
     items: [
-      { name: "MongoDB", proficiency: 85 },
-      { name: "MySQL", proficiency: 75 },
+      { name: "MongoDB", rating: 8 },
+      { name: "MySQL", rating: 7.5 },
     ],
   },
   {
     category: "Tools",
     items: [
-      { name: "Git", proficiency: 85 },
-      { name: "GitHub", proficiency: 85 },
-      { name: "phpMyAdmin", proficiency: 70 },
-      { name: "Figma", proficiency: 90 },
-      { name: "Canva", proficiency: 80 },
+      { name: "Git", rating: 8 },
+      { name: "GitHub", rating: 8 },
+      { name: "phpMyAdmin", rating: 7 },
+      { name: "Figma", rating: 8.5 },
+      { name: "Canva", rating: 7 },
     ],
   },
 ];

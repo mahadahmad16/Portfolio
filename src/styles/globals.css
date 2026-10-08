@@ -49,8 +49,7 @@ img {
   display: block;
 }
 
-/* Respect the user's OS-level reduced-motion preference everywhere,
-   not just inside the particle canvas. */
+/* Respect the user's OS-level reduced-motion preference everywhere. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

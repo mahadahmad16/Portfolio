@@ -1,0 +1,174 @@
+.theme-background {
+  --grid-size: 28px;
+  --pointer-x: 50%;
+  --pointer-y: 50%;
+  --hover-cell-x: 0px;
+  --hover-cell-y: 0px;
+  --hover-glow-opacity: 0;
+
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+  background: var(--bg-void);
+}
+
+.theme-background::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--accent-blue) 10%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--accent-blue) 10%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: var(--grid-size) var(--grid-size);
+  mask-image: radial-gradient(ellipse at center, #000 24%, transparent 100%);
+}
+
+.theme-background__hover-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image:
+    radial-gradient(
+      circle 120px at var(--pointer-x) var(--pointer-y),
+      color-mix(in srgb, var(--accent-cyan) 13%, transparent),
+      transparent 100%
+    ),
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--accent-cyan) 52%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--accent-cyan) 52%, transparent) 1px,
+      transparent 1px
+    );
+  background-size:
+    auto,
+    var(--grid-size) var(--grid-size),
+    var(--grid-size) var(--grid-size);
+  mask-image: radial-gradient(
+    circle 150px at var(--pointer-x) var(--pointer-y),
+    #000 0,
+    transparent 100%
+  );
+  opacity: var(--hover-glow-opacity);
+  transition: opacity 180ms ease;
+  pointer-events: none;
+}
+
+.theme-background__hover-grid::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--grid-size);
+  height: var(--grid-size);
+  content: "";
+  transform: translate3d(var(--hover-cell-x), var(--hover-cell-y), 0);
+  border: 1px solid color-mix(in srgb, var(--accent-cyan) 90%, transparent);
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--accent-cyan) 38%, transparent),
+    color-mix(in srgb, var(--accent-blue) 50%, transparent)
+  );
+  box-shadow:
+    inset 0 0 12px color-mix(in srgb, var(--accent-cyan) 34%, transparent),
+    0 0 18px color-mix(in srgb, var(--accent-blue) 48%, transparent);
+  transition: transform 140ms ease-out;
+}
+
+.theme-background__wave {
+  position: absolute;
+  width: min(44vw, 620px);
+  height: min(56vh, 520px);
+  border-radius: 50%;
+  opacity: 0.18;
+  filter: blur(44px);
+  will-change: transform;
+}
+
+.theme-background__wave--primary {
+  top: -18%;
+  left: -20%;
+  background: radial-gradient(
+    ellipse,
+    color-mix(in srgb, var(--accent-blue) 72%, transparent),
+    color-mix(in srgb, var(--accent-cyan) 22%, transparent) 42%,
+    transparent 72%
+  );
+  animation: grid-wave-primary 22s ease-in-out infinite alternate;
+}
+
+.theme-background__wave--secondary {
+  right: -22%;
+  bottom: -22%;
+  width: min(38vw, 520px);
+  height: min(48vh, 440px);
+  opacity: 0.13;
+  background: radial-gradient(
+    ellipse,
+    color-mix(in srgb, var(--accent-cyan) 68%, transparent),
+    color-mix(in srgb, var(--accent-blue) 18%, transparent) 46%,
+    transparent 74%
+  );
+  animation: grid-wave-secondary 27s ease-in-out infinite alternate;
+}
+
+@keyframes grid-wave-primary {
+  from {
+    transform: translate3d(0, 0, 0) scale(0.88);
+  }
+  to {
+    transform: translate3d(115vw, 54vh, 0) scale(1.08);
+  }
+}
+
+@keyframes grid-wave-secondary {
+  from {
+    transform: translate3d(0, 0, 0) scale(0.9);
+  }
+  to {
+    transform: translate3d(-105vw, -56vh, 0) scale(1.12);
+  }
+}
+
+@media (max-width: 600px) {
+  .theme-background {
+    --grid-size: 24px;
+  }
+
+  .theme-background__wave {
+    width: 80vw;
+    height: 42vh;
+    filter: blur(34px);
+    opacity: 0.15;
+  }
+
+  .theme-background__wave--secondary {
+    width: 72vw;
+    height: 38vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-background__hover-grid::after {
+    transition: none;
+  }
+
+  .theme-background__wave {
+    animation: none;
+    will-change: auto;
+  }
+}

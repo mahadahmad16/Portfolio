@@ -11,7 +11,7 @@ export default function AboutMe() {
         <SectionHeading as="h2" eyebrow="About" title="A bit about me" />
         <GlowCard className="about-me__bio-card">
           <p>
-            I'm Mahad Ahmad, A Computer Science student and aspiring full-stack developer with hands-on experience building responsive web interfaces and modern web applications. Familiar with React, JavaScript, TypeScript, Node.js, Express, and MongoDB, with a strong interest in UI/UX design and creating intuitive digital experiences.
+            I'm Mahad Ahmad, a Computer Science student and full-stack developer skilled in React, TypeScript, Node.js, Express, and MongoDB, with a passion for UI/UX and modern web experiences.
           </p>
           <p>
             Experienced in completing frontend development internship tasks and building personal projects across web development and interface design.

@@ -5,7 +5,7 @@ import useSidebar from "../../hooks/useSidebar";
 import Topbar from "./Topbar";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
-import ParticlesBackground from "../background/ParticlesBackground";
+import ThemeBackground from "../background/ThemeBackground";
 import CursorFollower from "../common/CursorFollower";
 import "./MainLayout.css";
 
@@ -30,7 +30,7 @@ function LayoutShell() {
 
   return (
     <div className="main-layout">
-      <ParticlesBackground />
+      <ThemeBackground />
       <CursorFollower />
 
       <Topbar isSidebarOpen={sidebar.isOpen} onToggleSidebar={sidebar.toggle} />

@@ -21,11 +21,8 @@ const ThemeContext = createContext(null);
 /**
  * Wraps the app shell (see MainLayout) so any component can read the
  * active theme — not just the ThemeSwitcher that sets it. This matters
- * for anything that draws colors in canvas/JS instead of plain CSS
- * (ParticlesBackground, SnakeGame), since canvas can't read
- * `var(--accent-cyan)` the way normal DOM+CSS does — those components
- * need to know *when* the theme changed so they can re-read the color
- * and redraw.
+ * for components that need the active theme in JavaScript, while CSS
+ * backgrounds and surfaces respond directly to the root theme tokens.
  */
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(getStoredTheme);

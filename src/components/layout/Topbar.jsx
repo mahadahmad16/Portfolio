@@ -1,4 +1,4 @@
-import profilePhoto from "../../assets/images/My Photo.png";
+import profilePhoto from "../../assets/images/My Photo Theme.png";
 import { Menu, X } from "lucide-react";
 import ThemeSwitcher from "../common/ThemeSwitcher";
 import "./Topbar.css";
@@ -6,9 +6,7 @@ import "./Topbar.css";
 /**
  * Fixed top bar: brand mark on the left, theme switcher + hamburger
  * toggle on the right (the hamburger is visible on small screens only
- * — the Sidebar is always visible on desktop). Swap `.topbar__avatar`'s
- * initials for the real profile photo once it's available:
- * <img src={profilePhoto} alt="Mahad Ahmad" />
+ * — the Sidebar is always visible on desktop).
  */
 export default function Topbar({ isSidebarOpen, onToggleSidebar }) {
   return (

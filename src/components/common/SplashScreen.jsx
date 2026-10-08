@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import ParticlesBackground from "../background/ParticlesBackground";
+import ThemeBackground from "../background/ThemeBackground";
 import useReducedMotion from "../../hooks/useReducedMotion";
 import "./SplashScreen.css";
-import profileImage from "../../assets/images/My Photo.png";
+import profileImage from "../../assets/images/My Photo Theme.png";
 
 const DEFAULT_DURATION_MS = 3000; // 3 seconds
 
@@ -16,7 +16,7 @@ export default function SplashScreen({ duration = DEFAULT_DURATION_MS, onFinish 
 
   return (
     <div className="splash">
-      <ParticlesBackground />
+      <ThemeBackground />
 
       <div className="splash__content" role="status" aria-live="polite">
         <span

@@ -5,16 +5,6 @@ import progreeinternshipCertificate from "../assets/certificates/progree interns
 
 export const CERTIFICATES = [
   {
-    id: "internship-completion",
-    title: "Certificate of Completion",
-    program: "Front End Development Intern — 6-Week Internship Program",
-    issuer: "Web Era Solutions PK",
-    issuedBy: "Hifza Saleem, Founder & CEO",
-    date: "August 24, 2026",
-    certificateId: "WE-CERT-2026-255",
-    image: weberainternshipCertificate,
-  },
-  {
     id: "mobile-app-development",
     title: "Certificate of Participation",
     program: "Code & Create Project Display 2026 — Mobile App Development",
@@ -31,6 +21,16 @@ export const CERTIFICATES = [
     issuedBy: "Dr. Muhammad Faheem, Associate Dean CS Department",
     date: "February 18, 2026",
     image: webCertificate,
+  },
+  {
+    id: "internship-completion",
+    title: "Certificate of Completion",
+    program: "Front End Development Intern — 6-Week Internship Program",
+    issuer: "Web Era Solutions PK",
+    issuedBy: "Hifza Saleem, Founder & CEO",
+    date: "August 24, 2026",
+    certificateId: "WE-CERT-2026-255",
+    image: weberainternshipCertificate,
   },
   {
     id: "internship-completion",

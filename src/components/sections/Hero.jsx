@@ -18,7 +18,11 @@ export default function Hero() {
       </p>
 
       <p className="hero__tagline">
-        I build modern web applications and intuitive digital experiences.
+        // I build modern websites and web apps that are simple and easy to use.
+      </p>
+
+      <p className="hero__tagline hero__status">
+        <span className="hero__status-label">• Status:</span> Actively seeking new opportunities to contribute and grow as a developer.
       </p>
 
       <div className="hero__actions">

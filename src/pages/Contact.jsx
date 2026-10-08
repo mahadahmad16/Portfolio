@@ -8,7 +8,7 @@ export default function Contact() {
       <SectionHeading
         eyebrow="Get in touch"
         title="Contact"
-        description="Reach out about internships, freelance work, or collaboration — I'll get back to you as soon as I can."
+        description=" // Reach out about internships, freelance work, or collaboration — I'll get back to you as soon as I can."
       />
       <ContactInfo />
     </div>

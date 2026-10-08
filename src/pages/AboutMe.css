@@ -4,6 +4,11 @@
   gap: 2.5rem;
 }
 
+.about-me__bio .section-heading__title {
+  font-family: var(--font-display);
+  letter-spacing: inherit;
+}
+
 .about-me__bio-card p {
   margin: 0;
   color: var(--text-muted);

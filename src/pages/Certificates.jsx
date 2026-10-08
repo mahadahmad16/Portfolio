@@ -27,7 +27,7 @@ export default function Certificates() {
       <SectionHeading
         eyebrow="Recognition"
         title="Certificates"
-        description="Certifications and project recognitions I've earned so far."
+        description="// Certifications and project recognitions I've earned so far."
       />
 
       <div className="certificates__grid">

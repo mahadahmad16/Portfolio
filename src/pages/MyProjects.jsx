@@ -41,7 +41,7 @@ export default function MyProjects() {
       <SectionHeading
         eyebrow="Work"
         title="My Projects"
-        description="A few things I've built recently."
+        description=" // A few things I've built recently."
       />
 
       <section className="my-projects__category" aria-labelledby="development-projects">

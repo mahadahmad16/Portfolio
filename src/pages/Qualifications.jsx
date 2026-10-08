@@ -11,7 +11,7 @@ export default function Qualifications() {
       <SectionHeading
         eyebrow="Qualifications"
         title="Education & Experience"
-        description="A quick look at where I've studied and worked so far."
+        description=" // A quick look at where I've studied and worked so far."
       />
 
       <section className="qualifications__group">

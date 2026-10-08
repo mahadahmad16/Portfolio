@@ -9,8 +9,10 @@
   justify-content: space-between;
   padding: 0 clamp(1rem, 3vw, 2rem);
   background: var(--bg-panel-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: color-mix(in srgb, var(--bg-panel-glass) 78%, transparent);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  isolation: isolate;
   border-bottom: 1px solid var(--border-hairline);
   z-index: 40;
 }

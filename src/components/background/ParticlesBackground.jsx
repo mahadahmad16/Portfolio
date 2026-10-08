@@ -25,7 +25,7 @@ export default function ParticlesBackground() {
     let dpr = 1;
     let particles = [];
     let frameId = null;
-    let isVisible = true;
+    let isVisible = !document.hidden;
     let particleColor = getComputedStyle(document.documentElement)
       .getPropertyValue("--accent-cyan-rgb")
       .trim();
@@ -106,12 +106,19 @@ export default function ParticlesBackground() {
       }
     }
 
+    function stopAnimation() {
+      if (frameId !== null) {
+        cancelAnimationFrame(frameId);
+        frameId = null;
+      }
+    }
+
     function handleVisibilityChange() {
       isVisible = !document.hidden;
       if (isVisible && !prefersReducedMotion && frameId === null) {
         frameId = requestAnimationFrame(step);
-      } else if (frameId) {
-        cancelAnimationFrame(frameId);
+      } else if (!isVisible) {
+        stopAnimation();
       }
     }
 
@@ -124,7 +131,7 @@ export default function ParticlesBackground() {
 
     resize();
     draw();
-    if (!prefersReducedMotion) {
+    if (isVisible && !prefersReducedMotion) {
       frameId = requestAnimationFrame(step);
     }
     themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
@@ -133,7 +140,7 @@ export default function ParticlesBackground() {
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
-      if (frameId) cancelAnimationFrame(frameId);
+      stopAnimation();
       themeObserver.disconnect();
       window.removeEventListener("resize", debouncedResize);
       document.removeEventListener("visibilitychange", handleVisibilityChange);

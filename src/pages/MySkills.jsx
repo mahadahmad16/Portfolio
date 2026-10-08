@@ -8,7 +8,7 @@ export default function MySkills() {
       <SectionHeading
         eyebrow="Skills"
         title="My Skills"
-        description="Technologies and tools I work with, grouped by area."
+        description="A snapshot of my current proficiency across the tools and technologies I use."
       />
       <SkillsGrid />
     </div>

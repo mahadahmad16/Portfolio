@@ -85,8 +85,3 @@
   }
 }
 
-@media (max-width: 480px) {
-  .topbar__name {
-    display: none;
-  }
-}

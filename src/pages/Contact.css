@@ -3,3 +3,20 @@
   flex-direction: column;
   gap: 2rem;
 }
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__grid > .contact-info {
+    max-width: none;
+  }
+}

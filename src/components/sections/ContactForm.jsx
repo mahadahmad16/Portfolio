@@ -101,6 +101,17 @@ export default function ContactForm() {
         </label>
 
         <label className="contact-form__field">
+          <span className="contact-form__label">Phone (optional)</span>
+          <input
+            className="contact-form__input"
+            type="tel"
+            name="phone"
+            autoComplete="tel"
+            maxLength={30}
+          />
+        </label>
+
+        <label className="contact-form__field">
           <span className="contact-form__label">Message</span>
           <textarea
             className="contact-form__input contact-form__textarea"

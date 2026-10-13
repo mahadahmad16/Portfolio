@@ -31,6 +31,7 @@ export const SKILL_CATEGORIES = [
       { name: "phpMyAdmin", rating: 6.5 },
       { name: "Figma", rating: 8.5 },
       { name: "Canva", rating: 7 },
+      { name: "Postman", rating: 8 },
     ],
   },
 ];

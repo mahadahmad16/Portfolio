@@ -149,12 +149,25 @@
   animation: splash-progress var(--splash-duration) linear forwards;
 }
 
+.splash__loader-copy {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .splash__loader-label {
   color: var(--text-muted);
   font-family: var(--font-mono);
   font-size: 0.65rem;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
+}
+
+.splash__loader-percentage {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-variant-numeric: tabular-nums;
 }
 
 .splash__loader-char {
@@ -215,8 +228,8 @@
 }
 
 .splash--reduced-motion .splash__loader-progress {
-  transform: scaleX(1);
   animation: none;
+  transform: scaleX(var(--splash-progress, 0));
 }
 
 .splash--reduced-motion .splash__loader-char {

@@ -11,10 +11,10 @@ export default function AboutMe() {
         <SectionHeading as="h2" eyebrow="About" title="A bit about me" />
         <GlowCard className="about-me__bio-card">
           <p>
-            I'm Mahad Ahmad, a Computer Science student who likes turning ideas into websites and apps people enjoy using. I bring the pages to life with React, JavaScript, and TypeScript, and use Figma for UI/UX design before adding polish with Tailwind and Bootstrap.
+            I'm Mahad Ahmad, a Computer Science student who builds easy-to-use apps with React, JavaScript, TypeScript, Tailwind, and Bootstrap. I also create UI/UX designs in Figma and Canva.
           </p>
           <p>
-            Behind the scenes, I build with Python, FastAPI, Node.js, Express, or PHP, with PostgreSQL, MongoDB, or MySQL to keep the data in order. Git, GitHub and Postman help me take each project from first sketch to finished feature.
+            I use Python, FastAPI, Node.js, Express, PHP, PostgreSQL, MongoDB, and MySQL, plus Git, GitHub, and Postman to build and test my projects.
           </p>
         </GlowCard>
       </section>

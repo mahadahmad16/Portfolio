@@ -43,7 +43,7 @@ export default function SplashScreen({ duration = DEFAULT_DURATION_MS, onFinish 
 
   const loadingLabel = loadingCompleted
     ? "[Loading Completed ✓]"
-    : "[Loading Screen....]";
+    : "[Loading Portfolio....]";
 
   return (
     <div

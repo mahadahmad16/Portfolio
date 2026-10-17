@@ -1,39 +1,62 @@
 
+import {
+  SiBootstrap,
+  SiExpress,
+  SiFastapi,
+  SiFigma,
+  SiGit,
+  SiGithub,
+  SiJavascript,
+  SiMongodb,
+  SiMysql,
+  SiNodedotjs,
+  SiPhp,
+  SiPostgresql,
+  SiPostman,
+  SiPython,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
+import { Palette } from "lucide-react";
+
 export const SKILL_CATEGORIES = [
   {
     category: "Frontend",
     items: [
-      { name: "React", rating: 8 },
-      { name: "JavaScript", rating: 8.5 },
-      { name: "TypeScript", rating: 7 },
-      { name: "Tailwind & Bootstrap", rating: 7.5 },
+      { name: "React", icons: [SiReact] },
+      { name: "JavaScript", icons: [SiJavascript] },
+      { name: "TypeScript", icons: [SiTypescript] },
+      { name: "Bootstrap", icons: [SiBootstrap]},
+      { name: "Tailwind", icons: [SiTailwindcss] },
     ],
   },
   {
     category: "Backend",
     items: [
-      { name: "Node.js", rating: 7.5 },
-      { name: "Express.js", rating: 7 },
-      { name: "PHP", rating: 6.5 },
-      // { name: "Python", rating: 8 },
-      // { name: "FastAPI", rating: 7.5 },
+      { name: "Python", icons: [SiPython] },
+      { name: "FastAPI", icons: [SiFastapi] },
+      { name: "Node.js", icons: [SiNodedotjs] },
+      { name: "Express.js", icons: [SiExpress] },
+      { name: "PHP", icons: [SiPhp] },
     ],
   },
   {
     category: "Database",
     items: [
-      { name: "MongoDB", rating: 8 },
-      { name: "MySQL", rating: 7.5 },
-      // { name: "PostgreSQL", rating: 7.5 },
+      { name: "PostgreSQL", icons: [SiPostgresql] },
+      { name: "MongoDB", icons: [SiMongodb] },
+      { name: "MySQL", icons: [SiMysql] },
     ],
   },
   {
     category: "Tools",
     items: [
-      { name: "Git & GitHub", rating: 8 },
-      { name: "Figma", rating: 8.5 },
-      { name: "Canva", rating: 7 },
-      { name: "Postman", rating: 8 },
+      { name: "Figma", icons: [SiFigma] },
+      { name: "Postman", icons: [SiPostman] },
+      { name: "Git", icons: [SiGit, ]},
+      { name: "Github", icons: [SiGithub]},
+      { name: "Canva", icons: [Palette] },
     ],
   },
 ];

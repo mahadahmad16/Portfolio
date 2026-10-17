@@ -14,7 +14,7 @@ export default function Hero() {
       <h1 className="hero__name">Mahad Ahmad</h1>
 
       <p className="hero__role">
-        <TypingText words={["Full Stack Developer", "UI/UX Designer"]} />
+        <TypingText words={["Full-Stack Developer", "UI/UX Designer"]} />
       </p>
 
       <p className="hero__tagline">

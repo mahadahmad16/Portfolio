@@ -15,7 +15,10 @@ export default function SplashScreen({ duration = DEFAULT_DURATION_MS, onFinish 
   }, [duration, onFinish]);
 
   return (
-    <div className="splash">
+    <div
+      className={`splash${prefersReducedMotion ? " splash--reduced-motion" : ""}`}
+      style={{ "--splash-duration": `${duration}ms` }}
+    >
       <ThemeBackground />
 
       <div className="splash__content" role="status" aria-live="polite">
@@ -28,7 +31,12 @@ export default function SplashScreen({ duration = DEFAULT_DURATION_MS, onFinish 
           <img src={profileImage} alt="" />
         </span>
         <h1 className="splash__name">Mahad Ahmad</h1>
-        <p className="splash__badge">Welcome to my portfolio</p>
+        <div className="splash__loader" aria-hidden="true">
+          <span className="splash__loader-track">
+            <span className="splash__loader-progress" />
+          </span>
+          <span className="splash__loader-label">Loading portfolio</span>
+        </div>
       </div>
     </div>
   );

@@ -40,7 +40,6 @@ export const PROJECTS = [
     description:
       "A website where users can easily explore different fan companies and their products and discover available fan products.",
     technologies: ["HTML", "CSS", "JavaScript", "Local Storage", "Git & GitHub"],
-    githubUrl: "https://github.com/mahadahmad16/aldhawalwahaj.git",
     liveUrl: "https://aldhawalwahaj.vercel.app/",
   },
   {
